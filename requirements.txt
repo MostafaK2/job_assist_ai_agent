@@ -1,0 +1,11 @@
+langchain
+langchain-google-genai
+langgraph
+python-dotenv
+pydantic
+requests
+playwright
+streamlit
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
