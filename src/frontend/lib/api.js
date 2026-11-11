@@ -1,12 +1,10 @@
 // All calls to the Python backend go through here.
 // Paths like "/api/profile" go to this site, and next.config.mjs forwards them to the backend.
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
 export async function apiFetch(path, { method = "GET", body, headers, ...rest } = {}) {
   const isForm = body instanceof FormData;
 
-  const res = await fetch(`${API_URL}${path}`, {
+  const res = await fetch(path, {
     method,
     credentials: "include", // send the login session cookie
     headers: isForm ? headers : { "Content-Type": "application/json", ...headers },

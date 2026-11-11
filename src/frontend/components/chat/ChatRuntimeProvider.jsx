@@ -3,14 +3,13 @@
 import {
   AssistantRuntimeProvider,
   AuiConfig,
-  InMemoryThreadListAdapter,
   Suggestions,
   unstable_createMessageConverter as createMessageConverter,
   useAssistantTransportRuntime,
   useRemoteThreadListRuntime,
 } from "@assistant-ui/react";
 import { convertLangChainMessages } from "@assistant-ui/react-langgraph";
-import { createAssistantStream } from "assistant-stream";
+import { threadListAdapter } from "@/lib/threads";
 
 // The Python agent's messages are LangChain messages; this turns them into chat bubbles.
 const langChainMessages = createMessageConverter(convertLangChainMessages);
@@ -34,31 +33,11 @@ function useJobAssistRuntime() {
   return useAssistantTransportRuntime({
     api: "/api/assistant", // proxied to the backend by next.config.mjs
     protocol: "assistant-transport",
-    initialState: { messages: [], summarizing: false},
+    initialState: { messages: [], summarizing: false },
     converter,
     headers: { "Content-Type": "application/json" },
   });
 }
-
-/**
- * The conversation list lives in the browser for now, so it's cleared on refresh.
- * When the backend saves chats, replace this with an adapter that calls the backend.
- */
-class ChatListAdapter extends InMemoryThreadListAdapter {
-  // Name each chat after the first thing the user asked.
-  async generateTitle(remoteId, messages) {
-    const firstUserText = messages
-      ?.find((m) => m.role === "user")
-      ?.content?.find((part) => part.type === "text")
-      ?.text?.trim();
-    const title = firstUserText ? firstUserText.replace(/\s+/g, " ").slice(0, 48) : "";
-    return createAssistantStream((controller) => {
-      if (title) controller.appendText(title);
-    });
-  }
-}
-
-const chatListAdapter = new ChatListAdapter(); // must stay the same object across renders
 
 const config = AuiConfig({
   suggestions: Suggestions([
@@ -71,7 +50,7 @@ const config = AuiConfig({
 export default function ChatRuntimeProvider({ children }) {
   const runtime = useRemoteThreadListRuntime({
     runtimeHook: useJobAssistRuntime,
-    adapter: chatListAdapter,
+    adapter: threadListAdapter, // the sidebar, saved in Postgres (lib/threads.js)
   });
 
   return (
