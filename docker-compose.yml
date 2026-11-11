@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: agent-postgres
+    environment:
+      POSTGRES_USER: agent
+      POSTGRES_PASSWORD: agent        # local dev only; use a strong password when deploying
+      POSTGRES_DB: agent
+    ports:
+      - "127.0.0.1:5432:5432"         # only reachable from your own machine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agent -d agent"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+ 
+volumes:
+  pgdata:

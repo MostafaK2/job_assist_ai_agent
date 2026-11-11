@@ -1,0 +1,11 @@
+Generic single-database configuration with an async dbapi.
+
+Generate migrations: 
+alembic revision --autogenerate -m "create users conversations chat_messages"
+
+Apply it: 
+alembic upgrade head
+
+Check the Table if exists:
+docker exec -it agent-postgres psql -U agent -d agent -c '\dt'
+   you should see alembic_version, chat_messages, conversations and users

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Design tokens: use as bg-paper, text-ink, border-line, text-muted, bg-highlight ... */
+@theme {
+  --color-paper: #f2f4f7;      /* app background */
+  --color-surface: #ffffff;    /* panels, inputs */
+  --color-ink: #1c2b4a;        /* text, primary buttons */
+  --color-muted: #5b6680;      /* secondary text */
+  --color-line: #d5dbe5;       /* borders */
+  --color-highlight: #f6c343;  /* "needs you" marker */
+  --color-go: #2e7d5b;         /* approved / done */
+  --color-stop: #b4442f;       /* errors / rejected */
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Keyboard focus outline everywhere. In the base layer so a component can override it. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+/* Formatted agent replies in the chat */
+.chat-markdown > * + * { margin-top: 0.75em; }
+.chat-markdown ul { list-style: disc; padding-left: 1.4em; }
+.chat-markdown ol { list-style: decimal; padding-left: 1.4em; }
+.chat-markdown li + li { margin-top: 0.25em; }
+.chat-markdown a { text-decoration: underline; text-underline-offset: 2px; }
+.chat-markdown strong { font-weight: 700; }
+.chat-markdown h1, .chat-markdown h2, .chat-markdown h3 { font-weight: 700; line-height: 1.3; }
+.chat-markdown h1 { font-size: 1.25rem; }
+.chat-markdown h2 { font-size: 1.125rem; }
+.chat-markdown code { font-size: 0.875em; background: var(--color-surface); border: 1px solid var(--color-line); border-radius: 4px; padding: 0.1em 0.35em; }
+.chat-markdown pre { overflow-x: auto; background: var(--color-ink); color: #fff; border-radius: 8px; padding: 0.75rem 1rem; }
+.chat-markdown pre code { background: none; border: 0; padding: 0; color: inherit; }
+.chat-markdown table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.chat-markdown th, .chat-markdown td { border: 1px solid var(--color-line); padding: 0.4rem 0.6rem; text-align: left; }
