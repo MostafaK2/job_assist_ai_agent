@@ -134,3 +134,4 @@ async def assistant(request: ChatRequest, http_request: Request):
     response.headers["Cache-Control"] = "no-cache, no-transform"
     response.headers["X-Accel-Buffering"] = "no"
     return response
+

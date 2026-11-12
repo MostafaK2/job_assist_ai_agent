@@ -24,6 +24,12 @@ function titleFrom(messages) {
   return text ? text.replace(/\s+/g, " ").slice(0, TITLE_MAX_CHARS) : "";
 }
 
+/** A saved chat's messages, oldest first, in the same format the chat stream uses. */
+export async function loadThreadMessages(remoteId) {
+  const rows = await apiFetch(`${threadUrl(remoteId)}/messages`);
+  return rows.map((row) => row.content);
+}
+
 // One object for the whole app: assistant-ui needs the same adapter on every render.
 export const threadListAdapter = {
   async list() {

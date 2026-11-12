@@ -1,15 +1,17 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import {
   AssistantRuntimeProvider,
   AuiConfig,
   Suggestions,
   unstable_createMessageConverter as createMessageConverter,
   useAssistantTransportRuntime,
+  useAui,
   useRemoteThreadListRuntime,
 } from "@assistant-ui/react";
 import { convertLangChainMessages } from "@assistant-ui/react-langgraph";
-import { threadListAdapter } from "@/lib/threads";
+import { loadThreadMessages, threadListAdapter } from "@/lib/threads";
 
 // The Python agent's messages are LangChain messages; this turns them into chat bubbles.
 const langChainMessages = createMessageConverter(convertLangChainMessages);
@@ -28,15 +30,47 @@ function converter(state, connection) {
   };
 }
 
+const EMPTY_STATE = { messages: [], summarizing: false };
+
 /** One chat conversation, talking to POST /api/assistant on the Python backend. */
 function useJobAssistRuntime() {
-  return useAssistantTransportRuntime({
+  const runtime = useAssistantTransportRuntime({
     api: "/api/assistant", // proxied to the backend by next.config.mjs
     protocol: "assistant-transport",
-    initialState: { messages: [], summarizing: false },
+    initialState: EMPTY_STATE,
     converter,
     headers: { "Content-Type": "application/json" },
   });
+  useSavedMessages(runtime);
+  return runtime;
+}
+
+/**
+ * Opening a saved chat: load its messages from the backend (GET /api/threads/{id}/messages).
+ * Each chat gets its own runtime, so this runs once per chat you open.
+ */
+function useSavedMessages(runtime) {
+  const aui = useAui();
+  // The chat's server id when this chat was opened. A brand-new chat has none yet; it gets
+  // one when its first message is sent, and must not load anything (it would wipe the reply).
+  const openedWithId = useRef(aui.threadListItem.getState().remoteId);
+
+  useEffect(() => {
+    const remoteId = openedWithId.current;
+    if (!remoteId) return;
+    let cancelled = false;
+    loadThreadMessages(remoteId)
+      .then((messages) => {
+        const thread = runtime.thread.getState();
+        // Don't overwrite anything the user started in the meantime.
+        if (cancelled || thread.isRunning || thread.messages.length > 0) return;
+        runtime.thread.importExternalState({ ...EMPTY_STATE, messages });
+      })
+      .catch((error) => console.warn("Couldn't load this chat's messages:", error.message));
+    return () => {
+      cancelled = true;
+    };
+  }, [runtime]);
 }
 
 const config = AuiConfig({
