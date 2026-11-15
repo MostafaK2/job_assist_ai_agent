@@ -163,6 +163,30 @@ def _real_target(board_token: str, job_id: int) -> tuple[str, int, dict | None]:
         board, _, sid = STAND_IN_JOB.partition("/")
         return board, int(sid), None
 
+
+def load_form(board_token: str, job_id: int) -> dict:
+    """The application form as the tools see it (stand-in applied). Raises on fetch errors.
+    Also used by save_draft_answers, so answers are checked against the REAL form."""
+    board_token, job_id, stand_in = _real_target(board_token, job_id)
+    job = _fetch_job(board_token, job_id, questions=True)
+    fields = (
+        _questions(job.get("questions"), "main")
+        + _questions(job.get("location_questions"), "location")
+        + [f for c in job.get("compliance") or [] for f in _questions(c.get("questions"), "eeoc")]
+        + _demographic(job.get("demographic_questions"))
+    )
+    required = [f for f in fields if f["required"]]
+    return {
+        "board_token": board_token,
+        "job_id": job_id,
+        **({"stand_in_for": stand_in} if stand_in else {}),
+        "title": job.get("title"),
+        "url": _safe_url(job.get("absolute_url")),
+        "field_count": len(fields),
+        "required_count": len(required),
+        "user_only_required": [f["label"] for f in required if f["answer_source"] == "user_only"],
+        "fields": fields,
+    }
 # ---------------------------------------------------------------- tools
 
 @tool
@@ -207,30 +231,14 @@ def get_application_form(board_token: BoardToken, job_id: JobId) -> dict:
     Dropdown answers must be copied exactly from "options". Fields with "one_of" are
     alternatives (e.g. upload a resume file OR paste resume text): fill only one.
     """
+    # remove later
     board_token, job_id, _ = _real_target(board_token, job_id)
 
     try:
-        job = _fetch_job(board_token, job_id, questions=True)
+        return load_form(board_token, job_id)
     except (httpx.HTTPError, ValueError) as err:
         return _error(board_token, job_id, err)
 
-    fields = (
-        _questions(job.get("questions"), "main")
-        + _questions(job.get("location_questions"), "location")
-        + [f for c in job.get("compliance") or [] for f in _questions(c.get("questions"), "eeoc")]
-        + _demographic(job.get("demographic_questions"))
-    )
-    required = [f for f in fields if f["required"]]
-    return {
-        "board_token": board_token,
-        "job_id": job_id,
-        "title": job.get("title"),
-        "url": _safe_url(job.get("absolute_url")),
-        "field_count": len(fields),
-        "required_count": len(required),
-        "user_only_required": [f["label"] for f in required if f["answer_source"] == "user_only"],
-        "fields": fields,
-    }
 
 JOB_DETAILS_TOOLS = [get_job_details, get_application_form]
 
