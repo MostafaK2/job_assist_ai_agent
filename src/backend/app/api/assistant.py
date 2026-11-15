@@ -12,12 +12,33 @@ from langchain_core.messages import AIMessage, HumanMessage
 from app.api.schemas import MAX_MESSAGE_CHARS, ChatRequest
 from app.db.chat_store import conversation_exists, parse_thread_id, save_messages, touch_conversation
 
+import json
+import logging
+import os
+
+log = logging.getLogger("agent.tools")
+DEBUG_TOOLS = os.getenv("DEBUG_TOOLS") == "1"
+
+
 router = APIRouter()
 log = logging.getLogger("uvicorn.error")
 
 # The summarization step runs as its own graph node. Its output (a "Here is a summary..."
 # message) is for the agent's memory only and must not appear in the chat.
 SUMMARIZATION_NODE_PREFIX = "SummarizationMiddleware"
+
+def _log_tool_calls(chunk):
+    """Print which tools the model calls (name + short args). Results are not printed."""
+    for update in (chunk or {}).values():
+        if not isinstance(update, dict):
+            continue
+        for m in update.get("messages") or []:
+            for call in getattr(m, "tool_calls", None) or []:
+                args = json.dumps(call["args"], default=str)
+                if len(args) > 200:
+                    args = args[:200] + "…"
+                log.info("TOOL CALL %s %s", call["name"], args)
+
 
 
 def _is_from_summarizer(event_type: str, chunk) -> bool:
@@ -111,6 +132,9 @@ async def assistant(request: ChatRequest, http_request: Request):
                         controller.state["summarizing"] = False  # summary done
                     continue
                 replies.extend(_finished_messages(event_type, chunk))
+                # Tool call output
+                if DEBUG_TOOLS and event_type == "updates":
+                    _log_tool_calls(chunk)
                 append_langgraph_event(controller.state, namespace, event_type, chunk)
         except ModelRateLimitError:
             log.warning("Gemini rate limit or quota reached (thread %s)", conversation_id)

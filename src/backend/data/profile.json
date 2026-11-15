@@ -1,0 +1,124 @@
+{
+  "_comment": "FAKE DEVELOPMENT DATA ONLY. Invented people. Never add real user data to this file.",
+  "profiles": [
+    {
+      "user_id": "dev-user-1",
+      "identity": {
+        "first_name": "Alex",
+        "last_name": "Rivera",
+        "preferred_name": "Alex",
+        "suffix": null,
+        "email": "alex.rivera@example.com",
+        "phone": "+1-555-010-0101",
+        "dob": "1990-01-01",
+        "pronouns": "he/him"
+      },
+      "address": {
+        "address_line_1": "123 Main St",
+        "address_line_2": null,
+        "address_line_3": null,
+        "city": "Philadelphia",
+        "state": "PA",
+        "zip_code": "19106",
+        "country": "United States"
+      },
+      "links": {
+        "linkedin_url": "https://www.linkedin.com/in/example-alex-rivera",
+        "github_url": "https://github.com/example-alex-rivera",
+        "website_portfolio_url": "https://example.com"
+      },
+      "summary": "Backend-leaning software engineer finishing a CS degree, with two internships building Python APIs and data pipelines.",
+      "work_history": [
+        {
+          "company": "Northwind Analytics",
+          "title": "Software Engineering Intern",
+          "location": "New York, NY (hybrid)",
+          "employment_type": "internship",
+          "start_date": "2026-05-26",
+          "end_date": "2026-08-14",
+          "description": [
+            "Built a FastAPI service that cut report generation time from 40s to 6s",
+            "Added Postgres indexes and query caching for the customer dashboard",
+            "Wrote integration tests that raised coverage from 52% to 81%"
+          ],
+          "technologies": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker"]
+        },
+        {
+          "company": "Contoso Health",
+          "title": "Data Engineering Intern",
+          "location": "Remote",
+          "employment_type": "internship",
+          "start_date": "2025-06-02",
+          "end_date": "2025-08-22",
+          "description": [
+            "Migrated nightly ETL jobs from cron scripts to Airflow DAGs",
+            "Built data-quality checks that caught schema drift before it reached reports"
+          ],
+          "technologies": ["Python", "Airflow", "SQL", "AWS S3"]
+        },
+        {
+          "company": "University IT Help Desk",
+          "title": "Student Technician",
+          "location": "Philadelphia, PA",
+          "employment_type": "part_time",
+          "start_date": "2024-09-03",
+          "end_date": null,
+          "description": ["Resolve ~30 hardware and account tickets per week"],
+          "technologies": ["Windows", "macOS", "ServiceNow"]
+        }
+      ],
+      "education": [
+        {
+          "school": "Example State University",
+          "degree": "B.S.",
+          "field_of_study": "Computer Science",
+          "start_date": "2023-09-01",
+          "end_date": "2027-05-15",
+          "gpa": 3.6
+        }
+      ],
+      "skills": ["Python", "JavaScript", "SQL", "Java", "FastAPI", "LangChain", "React", "Next.js"],
+      "spoken_languages": ["English", "Spanish"],
+      "work_authorization": {
+        "authorized_to_work_in_us": true,
+        "authorized_to_work_in_canada": false,
+        "authorized_to_work_in_united_kingdom": false,
+        "requires_sponsorship_now": false,
+        "requires_sponsorship_future": false
+      },
+      "voluntary_self_identification": {
+        "gender": "Male",
+        "ethnicity": "Asian",
+        "disability": "None",
+        "lgbtq": "No",
+        "veteran_status": "No"
+      },
+      "preferences": {
+        "locations": ["New York, NY", "Philadelphia, PA", "Remote (US)"],
+        "all_location_selected": false,
+        "willing_to_relocate": true,
+        "work_location_preference": ["in-person", "hybrid", "remote"],
+        "target_titles": ["Software Engineer", "Backend Engineer", "Data Engineer"],
+        "seniority": ["entry-level", "junior"],
+        "company_size": ["startup", "mid", "large"],
+        "industries_preferred": ["Fintech", "Healthcare", "Developer tools"],
+        "companies_to_avoid": [],
+        "min_salary_usd": 95000,
+        "earliest_start_date": "2027-06-01",
+        "job_search_status": "actively_searching"
+      },
+      "security_clearance": {
+          "open_to_clearance_required_roles": true,
+          "has_clearance": false,
+          "clearance_type": null,
+          "expiration_date": null
+      },
+      "standard_answers": {
+        "how_did_you_hear": "Company careers page",
+        "notice_period": "Available after graduation in May 2027",
+        "previously_employed_here": "No",
+        "willing_to_travel": "Up to 10%"
+      }
+    }
+  ]
+}

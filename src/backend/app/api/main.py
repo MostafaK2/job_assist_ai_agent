@@ -12,6 +12,9 @@ from app.db.checkpointer import open_checkpointer
 from app.db.engine import engine
 from app.api.threads import router as threads_router
 
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: connect the agent's memory to Postgres, then build the agent once.

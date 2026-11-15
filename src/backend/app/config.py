@@ -29,3 +29,6 @@ SUMMARY_TRIM_TOKENS = int(os.getenv("SUMMARY_TRIM_TOKENS", "6000"))
 # the very next turn summarizes again. Each turn adds at least 2 (your message + the reply).
 if SUMMARY_TRIGGER_MESSAGES - SUMMARY_KEEP_MESSAGES < 4:
     raise ValueError("SUMMARY_TRIGGER_MESSAGES must be at least SUMMARY_KEEP_MESSAGES + 4")
+
+PROFILE_PATH = ROOT_DIR / "src" / "backend" / "data" / "profile.json"
+JOBS_PATH = ROOT_DIR / "src" / "backend" / "data" / "jobs.json"

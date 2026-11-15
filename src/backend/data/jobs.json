@@ -1,0 +1,3911 @@
+{
+  "_comment": "SYNTHETIC test data in the same shape as the real Greenhouse sample. Companies are fictional and every url is on example.com, so nothing here is a real form. '_category' is a test-only label; don't feed it to the matcher.",
+  "generated_at": "2026-11-14T12:00:00-05:00",
+  "jobs": [
+    {
+      "id": 9100001,
+      "title": "Backend Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Argentina",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-09T05:00:00-05:00",
+      "updated_at": "2026-10-16T05:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100001",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100002,
+      "title": "Backend Engineer Intern",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": null,
+      "location": "New York, NY",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-20T11:00:00-05:00",
+      "updated_at": "2026-09-20T11:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100002",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100003,
+      "title": "Software Engineer Intern",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Core",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "$42,800 - $57,000",
+      "posted_at": "2026-09-03T06:00:00-05:00",
+      "updated_at": "2026-09-23T06:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100003",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100004,
+      "title": "Frontend Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Web",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$110,000 - CA$150,000",
+      "posted_at": "2026-10-09T12:00:00-05:00",
+      "updated_at": "2026-10-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100004",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100005,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": null,
+      "location": "Ontario, Canada",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-08T02:00:00-05:00",
+      "updated_at": "2026-08-11T02:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100005",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100006,
+      "title": "Machine Learning Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: AI",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$165,000 - $225,500",
+      "posted_at": "2026-08-28T04:00:00-05:00",
+      "updated_at": "2026-08-29T04:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100006",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100007,
+      "title": "Data Analyst",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Analytics",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€48,800 - €65,000",
+      "posted_at": "2026-09-26T10:00:00-05:00",
+      "updated_at": "2026-10-13T10:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100007",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100008,
+      "title": "Data Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Data Platform",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": "US$50,000 - US$66,000",
+      "posted_at": "2026-08-15T10:00:00-05:00",
+      "updated_at": "2026-08-16T10:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100008",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100009,
+      "title": "Site Reliability Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: Infrastructure",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Full-time",
+      "pay": "$140,000 - $180,000",
+      "posted_at": "2026-07-26T09:00:00-05:00",
+      "updated_at": "2026-08-07T09:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100009",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100010,
+      "title": "Security Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Security",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-09-29T06:00:00-05:00",
+      "updated_at": "2026-10-07T06:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100010",
+      "summary": "Run application security reviews, threat modeling and the bug bounty program.",
+      "requirements": [
+        "3+ years application security",
+        "Secure code review",
+        "OWASP Top 10"
+      ],
+      "nice_to_have": [
+        "Cloud security (AWS)",
+        "Security certifications"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100011,
+      "title": "Product Manager",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": null,
+      "location": "Argentina",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-22T19:00:00-05:00",
+      "updated_at": "2026-10-29T19:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100011",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "product"
+    },
+    {
+      "id": 9100012,
+      "title": "Product Designer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Design",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$105,000 - CA$140,000",
+      "posted_at": "2026-08-23T14:00:00-05:00",
+      "updated_at": "2026-09-09T14:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100012",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100013,
+      "title": "Account Executive, Mid-Market",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Sales: Mid-Market",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Full-time",
+      "pay": "CA$70,000 - CA$90,000",
+      "posted_at": "2026-11-09T02:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100013",
+      "summary": "Run full sales cycles with 200-1,000 employee companies.",
+      "requirements": [
+        "2+ years closing SaaS deals",
+        "Salesforce",
+        "Quota attainment"
+      ],
+      "nice_to_have": [
+        "HR tech experience"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100014,
+      "title": "Sales Development Representative",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Sales: Development",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$49,400 - $58,900",
+      "posted_at": "2026-09-11T00:00:00-05:00",
+      "updated_at": "2026-10-01T00:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100014",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100015,
+      "title": "Customer Success Manager",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Customer Success",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Full-time",
+      "pay": "$72,000 - $95,000",
+      "posted_at": "2026-09-02T19:00:00-05:00",
+      "updated_at": "2026-09-10T19:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100015",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100016,
+      "title": "Technical Support Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "Toronto, Canada",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-26T20:00:00-05:00",
+      "updated_at": "2026-11-10T20:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100016",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "support"
+    },
+    {
+      "id": 9100017,
+      "title": "Recruiter",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "People: Talent Acquisition",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-10-23T15:00:00-05:00",
+      "updated_at": "2026-11-05T15:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100017",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100018,
+      "title": "Senior Accountant",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Finance",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Contract, about 12 months",
+      "pay": "CA$90,000 - CA$115,000",
+      "posted_at": "2026-09-14T20:00:00-05:00",
+      "updated_at": "2026-09-22T20:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100018",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100019,
+      "title": "Content Marketing Manager",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Marketing: Content",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$95,000 - $125,000",
+      "posted_at": "2026-09-06T04:00:00-05:00",
+      "updated_at": "2026-09-26T04:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100019",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100020,
+      "title": "Backend Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Platform",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Contract, about 12 months",
+      "pay": null,
+      "posted_at": "2026-11-12T13:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100020",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100021,
+      "title": "Backend Engineer Intern",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: Payments",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "$51,700 - $69,000",
+      "posted_at": "2026-07-24T16:00:00-05:00",
+      "updated_at": "2026-08-02T16:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100021",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100022,
+      "title": "Junior Software Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Core",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-08T07:00:00-05:00",
+      "updated_at": "2026-08-25T07:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100022",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100023,
+      "title": "Frontend Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Web",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€71,500 - €97,500",
+      "posted_at": "2026-09-12T12:00:00-05:00",
+      "updated_at": "2026-09-15T12:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100023",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100024,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "Eastern Timezone (US)",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-07-23T18:00:00-05:00",
+      "updated_at": "2026-07-25T18:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100024",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100025,
+      "title": "Machine Learning Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: AI",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£90,000 - £123,000",
+      "posted_at": "2026-09-06T08:00:00-05:00",
+      "updated_at": "2026-09-10T08:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100025",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100026,
+      "title": "Data Analyst",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Analytics",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€48,800 - €65,000",
+      "posted_at": "2026-07-24T17:00:00-05:00",
+      "updated_at": "2026-08-06T17:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100026",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100027,
+      "title": "Data Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Data Platform",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€81,200 - €107,200",
+      "posted_at": "2026-09-22T15:00:00-05:00",
+      "updated_at": "2026-10-12T15:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100027",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100028,
+      "title": "Site Reliability Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-16T10:00:00-05:00",
+      "updated_at": "2026-10-26T10:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100028",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "devops"
+    },
+    {
+      "id": 9100029,
+      "title": "Security Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-11-13T10:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100029",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "devops"
+    },
+    {
+      "id": 9100030,
+      "title": "Product Manager",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Product",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$137,500 - $176,000",
+      "posted_at": "2026-11-03T20:00:00-05:00",
+      "updated_at": "2026-11-10T20:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100030",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100031,
+      "title": "Product Designer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Design",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£63,000 - £84,000",
+      "posted_at": "2026-08-12T18:00:00-05:00",
+      "updated_at": "2026-08-30T18:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100031",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100032,
+      "title": "Account Executive, Mid-Market",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Sales: Mid-Market",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Contract, about 12 months",
+      "pay": null,
+      "posted_at": "2026-10-31T15:00:00-05:00",
+      "updated_at": "2026-11-13T15:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100032",
+      "summary": "Run full sales cycles with 200-1,000 employee companies.",
+      "requirements": [
+        "2+ years closing SaaS deals",
+        "Salesforce",
+        "Quota attainment"
+      ],
+      "nice_to_have": [
+        "HR tech experience"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100033,
+      "title": "Sales Development Representative",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Sales: Development",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Part-time",
+      "pay": "CA$26,000 - CA$31,000",
+      "posted_at": "2026-11-06T15:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100033",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100034,
+      "title": "Customer Success Manager",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Customer Success",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$79,200 - $104,500",
+      "posted_at": "2026-10-01T09:00:00-05:00",
+      "updated_at": "2026-10-08T09:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100034",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100035,
+      "title": "Technical Support Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Support",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Part-time",
+      "pay": null,
+      "posted_at": "2026-10-21T04:00:00-05:00",
+      "updated_at": "2026-11-04T04:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100035",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100036,
+      "title": "Recruiter",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": null,
+      "location": "New York, NY",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-07-26T19:00:00-05:00",
+      "updated_at": "2026-07-29T19:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100036",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "other"
+    },
+    {
+      "id": 9100037,
+      "title": "Senior Accountant",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Finance",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€58,500 - €74,800",
+      "posted_at": "2026-07-18T05:00:00-05:00",
+      "updated_at": "2026-07-23T05:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100037",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100038,
+      "title": "Content Marketing Manager",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Marketing: Content",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£57,000 - £75,000",
+      "posted_at": "2026-07-21T11:00:00-05:00",
+      "updated_at": "2026-07-26T11:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100038",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100039,
+      "title": "Backend Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Platform",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$115,000 - CA$155,000",
+      "posted_at": "2026-08-04T22:00:00-05:00",
+      "updated_at": "2026-08-13T22:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100039",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100040,
+      "title": "Backend Engineer Intern",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "Bangalore, India",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-20T14:00:00-05:00",
+      "updated_at": "2026-09-04T14:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100040",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100041,
+      "title": "Junior Software Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Eastern Timezone (US)",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-30T13:00:00-05:00",
+      "updated_at": "2026-09-16T13:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100041",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100042,
+      "title": "Frontend Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": null,
+      "location": "Ontario, Canada",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-12T20:00:00-05:00",
+      "updated_at": "2026-09-28T20:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100042",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100043,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Growth",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€94,200 - €120,200",
+      "posted_at": "2026-11-04T17:00:00-05:00",
+      "updated_at": "2026-11-06T17:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100043",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100044,
+      "title": "Machine Learning Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: AI",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Contract, about 12 months",
+      "pay": null,
+      "posted_at": "2026-07-22T18:00:00-05:00",
+      "updated_at": "2026-07-29T18:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100044",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100045,
+      "title": "Data Analyst",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Analytics",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$75,000 - $100,000",
+      "posted_at": "2026-08-30T18:00:00-05:00",
+      "updated_at": "2026-09-15T18:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100045",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100046,
+      "title": "Data Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Data Platform",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Full-time",
+      "pay": "$125,000 - $165,000",
+      "posted_at": "2026-10-04T05:00:00-05:00",
+      "updated_at": "2026-10-12T05:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100046",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100047,
+      "title": "Site Reliability Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Infrastructure",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": "US$56,000 - US$72,000",
+      "posted_at": "2026-07-18T10:00:00-05:00",
+      "updated_at": "2026-07-18T10:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100047",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100048,
+      "title": "Security Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "Berlin, Germany",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-16T20:00:00-05:00",
+      "updated_at": "2026-10-24T20:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100048",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "devops"
+    },
+    {
+      "id": 9100049,
+      "title": "Product Manager",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Product",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Full-time",
+      "pay": "CA$125,000 - CA$160,000",
+      "posted_at": "2026-09-27T03:00:00-05:00",
+      "updated_at": "2026-10-02T03:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100049",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100050,
+      "title": "Product Designer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-01T16:00:00-05:00",
+      "updated_at": "2026-08-17T16:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100050",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "product"
+    },
+    {
+      "id": 9100051,
+      "title": "Account Executive, Mid-Market",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-31T08:00:00-05:00",
+      "updated_at": "2026-11-08T08:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100051",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "sales"
+    },
+    {
+      "id": 9100052,
+      "title": "Sales Development Representative Intern",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Sales: Development",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": null,
+      "posted_at": "2026-10-07T17:00:00-05:00",
+      "updated_at": "2026-10-13T17:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100052",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100053,
+      "title": "Customer Success Manager",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Customer Success",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$68,400 - $90,200",
+      "posted_at": "2026-10-12T11:00:00-05:00",
+      "updated_at": "2026-10-14T11:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100053",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100054,
+      "title": "Technical Support Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Support",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-07T08:00:00-05:00",
+      "updated_at": "2026-08-27T08:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100054",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100055,
+      "title": "Recruiter",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": null,
+      "location": "San Francisco, CA",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-19T19:00:00-05:00",
+      "updated_at": "2026-09-19T19:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100055",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "other"
+    },
+    {
+      "id": 9100056,
+      "title": "Senior Accountant",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Finance",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-09-05T11:00:00-05:00",
+      "updated_at": "2026-09-16T11:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100056",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100057,
+      "title": "Content Marketing Manager",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Marketing: Content",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Contract, about 12 months",
+      "pay": null,
+      "posted_at": "2026-10-05T01:00:00-05:00",
+      "updated_at": "2026-10-06T01:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100057",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100058,
+      "title": "Backend Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: Platform",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$109,200 - $147,200",
+      "posted_at": "2026-09-28T19:00:00-05:00",
+      "updated_at": "2026-10-11T19:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100058",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100059,
+      "title": "Senior Backend Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Payments",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-07-18T05:00:00-05:00",
+      "updated_at": "2026-07-23T05:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100059",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100060,
+      "title": "Junior Software Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Core",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Contract, about 12 months",
+      "pay": null,
+      "posted_at": "2026-08-11T02:00:00-05:00",
+      "updated_at": "2026-08-24T02:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100060",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100061,
+      "title": "Frontend Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: Web",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-10-10T07:00:00-05:00",
+      "updated_at": "2026-10-13T07:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100061",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100062,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Growth",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Part-time",
+      "pay": "$72,500 - $92,500",
+      "posted_at": "2026-07-31T22:00:00-05:00",
+      "updated_at": "2026-08-11T22:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100062",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100063,
+      "title": "Machine Learning Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: AI",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-10-20T00:00:00-05:00",
+      "updated_at": "2026-10-30T00:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100063",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100064,
+      "title": "Data Analyst",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Analytics",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$82,500 - $110,000",
+      "posted_at": "2026-09-09T00:00:00-05:00",
+      "updated_at": "2026-09-26T00:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100064",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100065,
+      "title": "Data Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: Data Platform",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$125,000 - $165,000",
+      "posted_at": "2026-10-11T07:00:00-05:00",
+      "updated_at": "2026-10-29T07:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100065",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100066,
+      "title": "Site Reliability Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: Infrastructure",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-09-19T01:00:00-05:00",
+      "updated_at": "2026-09-29T01:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100066",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100067,
+      "title": "Security Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-01T06:00:00-05:00",
+      "updated_at": "2026-09-09T06:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100067",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "devops"
+    },
+    {
+      "id": 9100068,
+      "title": "Product Manager",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Product",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$125,000 - CA$160,000",
+      "posted_at": "2026-08-01T19:00:00-05:00",
+      "updated_at": "2026-08-07T19:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100068",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100069,
+      "title": "Product Designer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Design",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$115,500 - $154,000",
+      "posted_at": "2026-08-21T09:00:00-05:00",
+      "updated_at": "2026-08-30T09:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100069",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100070,
+      "title": "Account Executive, Mid-Market",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": null,
+      "location": "Argentina",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-16T03:00:00-05:00",
+      "updated_at": "2026-09-02T03:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100070",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "sales"
+    },
+    {
+      "id": 9100071,
+      "title": "Sales Development Representative",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Sales: Development",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Contract, about 12 months",
+      "pay": "CA$52,000 - CA$62,000",
+      "posted_at": "2026-07-21T07:00:00-05:00",
+      "updated_at": "2026-08-09T07:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100071",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100072,
+      "title": "Customer Success Manager Intern",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Customer Success",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "CA$45,000 - CA$60,000",
+      "posted_at": "2026-10-06T03:00:00-05:00",
+      "updated_at": "2026-10-12T03:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100072",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100073,
+      "title": "Technical Support Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Support",
+      "location": "Berlin, Germany",
+      "work_type": "On-site",
+      "employment_type": "Full-time",
+      "pay": "€39,000 - €51,000",
+      "posted_at": "2026-09-17T15:00:00-05:00",
+      "updated_at": "2026-09-23T15:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100073",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100074,
+      "title": "Recruiter",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "People: Talent Acquisition",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-21T10:00:00-05:00",
+      "updated_at": "2026-08-30T10:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100074",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100075,
+      "title": "Senior Accountant",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Finance",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-09T05:00:00-05:00",
+      "updated_at": "2026-08-18T05:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100075",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100076,
+      "title": "Content Marketing Manager",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Marketing: Content",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-10-12T21:00:00-05:00",
+      "updated_at": "2026-10-31T21:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100076",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100077,
+      "title": "Backend Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: Platform",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Part-time",
+      "pay": "$63,300 - $85,200",
+      "posted_at": "2026-08-24T18:00:00-05:00",
+      "updated_at": "2026-08-30T18:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100077",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100078,
+      "title": "Senior Backend Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Payments",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Part-time",
+      "pay": "CA$75,000 - CA$97,500",
+      "posted_at": "2026-10-25T16:00:00-05:00",
+      "updated_at": "2026-10-25T16:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100078",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100079,
+      "title": "Junior Software Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Core",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "$85,800 - $107,800",
+      "posted_at": "2026-08-02T14:00:00-05:00",
+      "updated_at": "2026-08-18T14:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100079",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100080,
+      "title": "Frontend Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Web",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€71,500 - €97,500",
+      "posted_at": "2026-10-28T22:00:00-05:00",
+      "updated_at": "2026-11-01T22:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100080",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100081,
+      "title": "Full-Stack Engineer Intern",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: Growth",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "US$18,000 - US$24,000",
+      "posted_at": "2026-08-29T02:00:00-05:00",
+      "updated_at": "2026-09-12T02:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100081",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100082,
+      "title": "Machine Learning Engineer Intern",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: AI",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Internship (summer 2027)",
+      "pay": null,
+      "posted_at": "2026-09-19T19:00:00-05:00",
+      "updated_at": "2026-10-03T19:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100082",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100083,
+      "title": "Data Analyst",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Analytics",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Part-time",
+      "pay": null,
+      "posted_at": "2026-09-17T04:00:00-05:00",
+      "updated_at": "2026-09-24T04:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100083",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100084,
+      "title": "Data Engineer Intern",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": null,
+      "location": "Eastern Timezone (US)",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-14T04:00:00-05:00",
+      "updated_at": "2026-10-28T04:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100084",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "data"
+    },
+    {
+      "id": 9100085,
+      "title": "Site Reliability Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": null,
+      "location": "Eastern Timezone (US)",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-03T19:00:00-05:00",
+      "updated_at": "2026-10-05T19:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100085",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "devops"
+    },
+    {
+      "id": 9100086,
+      "title": "Security Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Security",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "$128,200 - $166,200",
+      "posted_at": "2026-08-15T06:00:00-05:00",
+      "updated_at": "2026-08-17T06:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100086",
+      "summary": "Run application security reviews, threat modeling and the bug bounty program.",
+      "requirements": [
+        "3+ years application security",
+        "Secure code review",
+        "OWASP Top 10"
+      ],
+      "nice_to_have": [
+        "Cloud security (AWS)",
+        "Security certifications"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100087,
+      "title": "Product Manager Intern",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Product",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "CA$45,000 - CA$60,000",
+      "posted_at": "2026-11-06T06:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100087",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100088,
+      "title": "Product Designer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Design",
+      "location": "Berlin, Germany",
+      "work_type": "On-site",
+      "employment_type": "Full-time",
+      "pay": "€63,000 - €84,000",
+      "posted_at": "2026-08-07T18:00:00-05:00",
+      "updated_at": "2026-08-19T18:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100088",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100089,
+      "title": "Account Executive, Mid-Market",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Sales: Mid-Market",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Full-time",
+      "pay": "CA$70,000 - CA$90,000",
+      "posted_at": "2026-07-26T23:00:00-05:00",
+      "updated_at": "2026-08-12T23:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100089",
+      "summary": "Run full sales cycles with 200-1,000 employee companies.",
+      "requirements": [
+        "2+ years closing SaaS deals",
+        "Salesforce",
+        "Quota attainment"
+      ],
+      "nice_to_have": [
+        "HR tech experience"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100090,
+      "title": "Sales Development Representative",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-09T23:00:00-05:00",
+      "updated_at": "2026-10-24T23:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100090",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "sales"
+    },
+    {
+      "id": 9100091,
+      "title": "Customer Success Manager",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Customer Success",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "CA$72,000 - CA$95,000",
+      "posted_at": "2026-07-28T22:00:00-05:00",
+      "updated_at": "2026-08-01T22:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100091",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100092,
+      "title": "Technical Support Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-29T18:00:00-05:00",
+      "updated_at": "2026-08-29T18:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100092",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "support"
+    },
+    {
+      "id": 9100093,
+      "title": "Recruiter",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "People: Talent Acquisition",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$80,000 - CA$105,000",
+      "posted_at": "2026-10-21T11:00:00-05:00",
+      "updated_at": "2026-10-29T11:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100093",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100094,
+      "title": "Senior Accountant",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Finance",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Part-time",
+      "pay": "$42,800 - $54,600",
+      "posted_at": "2026-08-08T00:00:00-05:00",
+      "updated_at": "2026-08-16T00:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100094",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100095,
+      "title": "Content Marketing Manager",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": null,
+      "location": "Toronto, Canada",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-14T12:00:00-05:00",
+      "updated_at": "2026-10-01T12:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100095",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "other"
+    },
+    {
+      "id": 9100096,
+      "title": "Backend Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Platform",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Full-time",
+      "pay": "CA$115,000 - CA$155,000",
+      "posted_at": "2026-08-05T16:00:00-05:00",
+      "updated_at": "2026-08-06T16:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100096",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100097,
+      "title": "Senior Backend Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Austin, TX",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-26T08:00:00-05:00",
+      "updated_at": "2026-09-02T08:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100097",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100098,
+      "title": "Junior Software Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: Core",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": "US$31,200 - US$39,200",
+      "posted_at": "2026-10-16T22:00:00-05:00",
+      "updated_at": "2026-10-24T22:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100098",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100099,
+      "title": "Frontend Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Web",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Full-time",
+      "pay": "$126,500 - $172,500",
+      "posted_at": "2026-10-24T03:00:00-05:00",
+      "updated_at": "2026-10-27T03:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100099",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100100,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Growth",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "$145,000 - $185,000",
+      "posted_at": "2026-08-14T06:00:00-05:00",
+      "updated_at": "2026-08-16T06:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100100",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100101,
+      "title": "Machine Learning Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: AI",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-07T03:00:00-05:00",
+      "updated_at": "2026-08-26T03:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100101",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100102,
+      "title": "Data Analyst",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": null,
+      "location": "Berlin, Germany",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-19T15:00:00-05:00",
+      "updated_at": "2026-09-30T15:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100102",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "data"
+    },
+    {
+      "id": 9100103,
+      "title": "Data Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Data Platform",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-09-20T21:00:00-05:00",
+      "updated_at": "2026-09-23T21:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100103",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100104,
+      "title": "Site Reliability Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Infrastructure",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Part-time",
+      "pay": "CA$70,000 - CA$90,000",
+      "posted_at": "2026-09-19T07:00:00-05:00",
+      "updated_at": "2026-10-05T07:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100104",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100105,
+      "title": "Security Engineer Intern",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Security",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "$45,000 - $60,000",
+      "posted_at": "2026-09-14T23:00:00-05:00",
+      "updated_at": "2026-10-02T23:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100105",
+      "summary": "Run application security reviews, threat modeling and the bug bounty program.",
+      "requirements": [
+        "3+ years application security",
+        "Secure code review",
+        "OWASP Top 10"
+      ],
+      "nice_to_have": [
+        "Cloud security (AWS)",
+        "Security certifications"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100106,
+      "title": "Product Manager",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Product",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$118,800 - $152,000",
+      "posted_at": "2026-09-17T05:00:00-05:00",
+      "updated_at": "2026-10-01T05:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100106",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100107,
+      "title": "Product Designer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Design",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "US$42,000 - US$56,000",
+      "posted_at": "2026-09-11T02:00:00-05:00",
+      "updated_at": "2026-09-16T02:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100107",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100108,
+      "title": "Account Executive, Mid-Market",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Sales: Mid-Market",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Full-time",
+      "pay": "CA$70,000 - CA$90,000",
+      "posted_at": "2026-07-23T17:00:00-05:00",
+      "updated_at": "2026-07-31T17:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100108",
+      "summary": "Run full sales cycles with 200-1,000 employee companies.",
+      "requirements": [
+        "2+ years closing SaaS deals",
+        "Salesforce",
+        "Quota attainment"
+      ],
+      "nice_to_have": [
+        "HR tech experience"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100109,
+      "title": "Sales Development Representative",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Sales: Development",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-12T23:00:00-05:00",
+      "updated_at": "2026-08-27T23:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100109",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100110,
+      "title": "Customer Success Manager",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": null,
+      "location": "Austin, TX",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-11T22:00:00-05:00",
+      "updated_at": "2026-09-11T22:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100110",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "support"
+    },
+    {
+      "id": 9100111,
+      "title": "Technical Support Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Support",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "$61,800 - $80,800",
+      "posted_at": "2026-10-04T15:00:00-05:00",
+      "updated_at": "2026-10-22T15:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100111",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100112,
+      "title": "Recruiter Intern",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "People: Talent Acquisition",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "€29,200 - €39,000",
+      "posted_at": "2026-08-09T19:00:00-05:00",
+      "updated_at": "2026-08-19T19:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100112",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100113,
+      "title": "Senior Accountant",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Finance",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£54,000 - £69,000",
+      "posted_at": "2026-10-15T09:00:00-05:00",
+      "updated_at": "2026-10-21T09:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100113",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100114,
+      "title": "Content Marketing Manager Intern",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Marketing: Content",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Internship (summer 2027)",
+      "pay": null,
+      "posted_at": "2026-08-07T14:00:00-05:00",
+      "updated_at": "2026-08-12T14:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100114",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100115,
+      "title": "Backend Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Platform",
+      "location": "Bangalore, India",
+      "work_type": "Hybrid",
+      "employment_type": "Part-time",
+      "pay": null,
+      "posted_at": "2026-10-08T13:00:00-05:00",
+      "updated_at": "2026-10-26T13:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100115",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100116,
+      "title": "Senior Backend Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Payments",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€97,500 - €126,800",
+      "posted_at": "2026-07-30T06:00:00-05:00",
+      "updated_at": "2026-08-08T06:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100116",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100117,
+      "title": "Junior Software Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": null,
+      "location": "San Francisco, CA",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-09-06T08:00:00-05:00",
+      "updated_at": "2026-09-14T08:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100117",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9100118,
+      "title": "Frontend Engineer Intern",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": null,
+      "location": "Anywhere in the United States",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-27T16:00:00-05:00",
+      "updated_at": "2026-11-11T16:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100118",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100119,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Growth",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$145,000 - $185,000",
+      "posted_at": "2026-09-18T02:00:00-05:00",
+      "updated_at": "2026-09-23T02:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100119",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100120,
+      "title": "Machine Learning Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "Eastern Timezone (US)",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-11-05T00:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100120",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "data"
+    },
+    {
+      "id": 9100121,
+      "title": "Data Analyst",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Argentina",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-01T18:00:00-05:00",
+      "updated_at": "2026-08-10T18:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100121",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "data"
+    },
+    {
+      "id": 9100122,
+      "title": "Data Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: Data Platform",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$118,800 - $156,800",
+      "posted_at": "2026-09-20T17:00:00-05:00",
+      "updated_at": "2026-10-09T17:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100122",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100123,
+      "title": "Site Reliability Engineer Intern",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Infrastructure",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "$42,800 - $57,000",
+      "posted_at": "2026-07-19T22:00:00-05:00",
+      "updated_at": "2026-07-28T22:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100123",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100124,
+      "title": "Security Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Security",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$135,000 - CA$175,000",
+      "posted_at": "2026-11-05T17:00:00-05:00",
+      "updated_at": "2026-11-08T17:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100124",
+      "summary": "Run application security reviews, threat modeling and the bug bounty program.",
+      "requirements": [
+        "3+ years application security",
+        "Secure code review",
+        "OWASP Top 10"
+      ],
+      "nice_to_have": [
+        "Cloud security (AWS)",
+        "Security certifications"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100125,
+      "title": "Product Manager",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": null,
+      "location": "Austin, TX",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-11-03T07:00:00-05:00",
+      "updated_at": "2026-11-10T07:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100125",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "product"
+    },
+    {
+      "id": 9100126,
+      "title": "Product Designer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Design",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-09-16T14:00:00-05:00",
+      "updated_at": "2026-10-05T14:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100126",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100127,
+      "title": "Account Executive, Mid-Market",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": null,
+      "location": "Anywhere in the United States",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-07T14:00:00-05:00",
+      "updated_at": "2026-10-21T14:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100127",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "sales"
+    },
+    {
+      "id": 9100128,
+      "title": "Sales Development Representative",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Sales: Development",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$49,400 - $58,900",
+      "posted_at": "2026-08-24T18:00:00-05:00",
+      "updated_at": "2026-08-30T18:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100128",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100129,
+      "title": "Customer Success Manager",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-07-20T04:00:00-05:00",
+      "updated_at": "2026-07-24T04:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100129",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "support"
+    },
+    {
+      "id": 9100130,
+      "title": "Technical Support Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Support",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Full-time",
+      "pay": "$74,800 - $97,700",
+      "posted_at": "2026-07-30T18:00:00-05:00",
+      "updated_at": "2026-08-08T18:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100130",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100131,
+      "title": "Recruiter",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "People: Talent Acquisition",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£48,000 - £63,000",
+      "posted_at": "2026-10-09T20:00:00-05:00",
+      "updated_at": "2026-10-26T20:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100131",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100132,
+      "title": "Senior Accountant",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Finance",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$99,000 - $126,500",
+      "posted_at": "2026-08-11T02:00:00-05:00",
+      "updated_at": "2026-08-30T02:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100132",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100133,
+      "title": "Content Marketing Manager",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Marketing: Content",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$104,500 - $137,500",
+      "posted_at": "2026-07-28T18:00:00-05:00",
+      "updated_at": "2026-08-15T18:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100133",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100134,
+      "title": "Backend Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Platform",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": "US$46,000 - US$62,000",
+      "posted_at": "2026-08-08T07:00:00-05:00",
+      "updated_at": "2026-08-23T07:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100134",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100135,
+      "title": "Senior Backend Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Engineering: Payments",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-30T23:00:00-05:00",
+      "updated_at": "2026-09-19T23:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100135",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100136,
+      "title": "Junior Software Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Core",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Part-time",
+      "pay": "$42,900 - $53,900",
+      "posted_at": "2026-10-02T02:00:00-05:00",
+      "updated_at": "2026-10-05T02:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100136",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100137,
+      "title": "Frontend Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: Web",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "CA$110,000 - CA$150,000",
+      "posted_at": "2026-10-07T15:00:00-05:00",
+      "updated_at": "2026-10-19T15:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100137",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100138,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": null,
+      "location": "Anywhere in Ireland",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-10-04T04:00:00-05:00",
+      "updated_at": "2026-10-14T04:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100138",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100139,
+      "title": "Machine Learning Engineer Intern",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: AI",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "CA$45,000 - CA$60,000",
+      "posted_at": "2026-11-12T15:00:00-05:00",
+      "updated_at": "2026-11-14T12:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100139",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100140,
+      "title": "Data Analyst",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Analytics",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$75,000 - $100,000",
+      "posted_at": "2026-08-25T21:00:00-05:00",
+      "updated_at": "2026-09-14T21:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100140",
+      "summary": "Turn product and revenue data into dashboards and recommendations for leadership.",
+      "requirements": [
+        "2+ years in analytics",
+        "SQL",
+        "Looker or Tableau"
+      ],
+      "nice_to_have": [
+        "Python (pandas)",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100141,
+      "title": "Data Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: Data Platform",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$125,000 - $165,000",
+      "posted_at": "2026-10-28T03:00:00-05:00",
+      "updated_at": "2026-11-11T03:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100141",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100142,
+      "title": "Site Reliability Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: Infrastructure",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-24T17:00:00-05:00",
+      "updated_at": "2026-08-31T17:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100142",
+      "summary": "Keep production available: observability, incident response, and infrastructure as code.",
+      "requirements": [
+        "4+ years SRE/DevOps",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ],
+      "nice_to_have": [
+        "Prometheus/Grafana",
+        "Security hardening"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100143,
+      "title": "Security Engineer Intern",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Security",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": null,
+      "posted_at": "2026-09-22T10:00:00-05:00",
+      "updated_at": "2026-09-29T10:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100143",
+      "summary": "Run application security reviews, threat modeling and the bug bounty program.",
+      "requirements": [
+        "3+ years application security",
+        "Secure code review",
+        "OWASP Top 10"
+      ],
+      "nice_to_have": [
+        "Cloud security (AWS)",
+        "Security certifications"
+      ],
+      "_category": "devops"
+    },
+    {
+      "id": 9100144,
+      "title": "Product Manager",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Product",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Part-time",
+      "pay": "$68,800 - $88,000",
+      "posted_at": "2026-08-23T08:00:00-05:00",
+      "updated_at": "2026-09-07T08:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100144",
+      "summary": "Own the roadmap for the scheduling product: discovery, prioritization and launches.",
+      "requirements": [
+        "3+ years product management",
+        "B2B SaaS",
+        "Working with engineering and design"
+      ],
+      "nice_to_have": [
+        "Technical background",
+        "AI product experience"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100145,
+      "title": "Product Designer Intern",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Design",
+      "location": "Eastern Timezone (US)",
+      "work_type": "Remote (US, Eastern hours)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "$45,000 - $60,000",
+      "posted_at": "2026-09-20T21:00:00-05:00",
+      "updated_at": "2026-10-05T21:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100145",
+      "summary": "Design end-to-end flows in Figma and run usability tests.",
+      "requirements": [
+        "3+ years product design",
+        "Figma",
+        "A portfolio of shipped work"
+      ],
+      "nice_to_have": [
+        "Design systems",
+        "Front-end prototyping"
+      ],
+      "_category": "product"
+    },
+    {
+      "id": 9100146,
+      "title": "Account Executive, Mid-Market",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Sales: Mid-Market",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€45,500 - €58,500",
+      "posted_at": "2026-07-18T17:00:00-05:00",
+      "updated_at": "2026-08-03T17:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100146",
+      "summary": "Run full sales cycles with 200-1,000 employee companies.",
+      "requirements": [
+        "2+ years closing SaaS deals",
+        "Salesforce",
+        "Quota attainment"
+      ],
+      "nice_to_have": [
+        "HR tech experience"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100147,
+      "title": "Sales Development Representative",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Sales: Development",
+      "location": "San Francisco, CA",
+      "work_type": "On-site",
+      "employment_type": "Full-time",
+      "pay": "$59,800 - $71,300",
+      "posted_at": "2026-08-03T23:00:00-05:00",
+      "updated_at": "2026-08-13T23:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100147",
+      "summary": "Prospect by phone and email to book meetings for account executives.",
+      "requirements": [
+        "Excellent communication",
+        "Cold outreach",
+        "CRM experience preferred"
+      ],
+      "nice_to_have": [
+        "Using AI to research accounts"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9100148,
+      "title": "Customer Success Manager",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Customer Success",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Full-time",
+      "pay": "€46,800 - €61,800",
+      "posted_at": "2026-10-07T13:00:00-05:00",
+      "updated_at": "2026-10-16T13:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100148",
+      "summary": "Own renewals and adoption for a book of mid-market customers.",
+      "requirements": [
+        "2+ years in customer success",
+        "SaaS",
+        "Renewal management"
+      ],
+      "nice_to_have": [
+        "Gainsight",
+        "Data-driven account plans"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100149,
+      "title": "Technical Support Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Support",
+      "location": "Berlin, Germany",
+      "work_type": "On-site",
+      "employment_type": "Part-time",
+      "pay": "€19,500 - €25,500",
+      "posted_at": "2026-09-16T19:00:00-05:00",
+      "updated_at": "2026-10-01T19:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100149",
+      "summary": "Debug customer issues with APIs and integrations; write help-center articles.",
+      "requirements": [
+        "1+ years technical support",
+        "REST APIs and JSON",
+        "SQL basics"
+      ],
+      "nice_to_have": [
+        "Scripting (Python or JS)"
+      ],
+      "_category": "support"
+    },
+    {
+      "id": 9100150,
+      "title": "Recruiter Intern",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "People: Talent Acquisition",
+      "location": "Anywhere in Ireland",
+      "work_type": "Remote (Ireland only)",
+      "employment_type": "Internship (summer 2027)",
+      "pay": "€29,200 - €39,000",
+      "posted_at": "2026-07-17T02:00:00-05:00",
+      "updated_at": "2026-07-23T02:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100150",
+      "summary": "Run full-cycle hiring for engineering roles.",
+      "requirements": [
+        "2+ years tech recruiting",
+        "An ATS like Greenhouse or Lever"
+      ],
+      "nice_to_have": [
+        "Sourcing automation"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100151,
+      "title": "Senior Accountant",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Finance",
+      "location": "Austin, TX",
+      "work_type": "Hybrid (2 days in office)",
+      "employment_type": "Contract, about 12 months",
+      "pay": "$85,500 - $109,200",
+      "posted_at": "2026-08-05T23:00:00-05:00",
+      "updated_at": "2026-08-06T23:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100151",
+      "summary": "Month-end close, reconciliations and audit support.",
+      "requirements": [
+        "CPA or progress toward one",
+        "4+ years accounting",
+        "NetSuite"
+      ],
+      "nice_to_have": [
+        "SaaS revenue recognition (ASC 606)"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100152,
+      "title": "Content Marketing Manager",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Marketing: Content",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Contract, about 12 months",
+      "pay": "£57,000 - £75,000",
+      "posted_at": "2026-08-20T16:00:00-05:00",
+      "updated_at": "2026-08-24T16:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100152",
+      "summary": "Write and edit blog posts, guides and customer stories.",
+      "requirements": [
+        "4+ years content marketing",
+        "Excellent writing",
+        "SEO"
+      ],
+      "nice_to_have": [
+        "B2B SaaS",
+        "Video"
+      ],
+      "_category": "other"
+    },
+    {
+      "id": 9100153,
+      "title": "Backend Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: Platform",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$115,000 - $155,000",
+      "posted_at": "2026-08-30T02:00:00-05:00",
+      "updated_at": "2026-09-02T02:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9100153",
+      "summary": "Build and scale Python services and REST APIs backed by PostgreSQL.",
+      "requirements": [
+        "3+ years writing production backend code",
+        "Python (Django or FastAPI)",
+        "PostgreSQL and SQL performance",
+        "REST API design"
+      ],
+      "nice_to_have": [
+        "Kubernetes",
+        "Event-driven systems (Kafka)"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100154,
+      "title": "Senior Backend Engineer",
+      "company": "Bluepine Health",
+      "board_token": "bluepinehealth",
+      "department": "Engineering: Payments",
+      "location": "London, United Kingdom",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "£90,000 - £117,000",
+      "posted_at": "2026-09-16T12:00:00-05:00",
+      "updated_at": "2026-09-20T12:00:00-05:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9100154",
+      "summary": "Own payment and billing services in Go, focusing on reliability and correctness.",
+      "requirements": [
+        "5+ years of backend engineering",
+        "Go or Java",
+        "Distributed systems",
+        "Strong testing habits"
+      ],
+      "nice_to_have": [
+        "Payments or fintech",
+        "On-call leadership"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100155,
+      "title": "Junior Software Engineer",
+      "company": "Copperleaf Finance",
+      "board_token": "copperleaf",
+      "department": "Engineering: Core",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": null,
+      "posted_at": "2026-08-05T04:00:00-05:00",
+      "updated_at": "2026-08-15T04:00:00-05:00",
+      "url": "https://jobs.example.com/copperleaf/jobs/9100155",
+      "summary": "Ship small features across a Ruby on Rails monolith with mentorship from senior engineers.",
+      "requirements": [
+        "0-2 years of professional coding or a strong internship",
+        "Any OO language (Ruby preferred)",
+        "Git basics"
+      ],
+      "nice_to_have": [
+        "Open-source contributions"
+      ],
+      "_category": "backend"
+    },
+    {
+      "id": 9100156,
+      "title": "Frontend Engineer",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Engineering: Web",
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": "Full-time",
+      "pay": "CA$110,000 - CA$150,000",
+      "posted_at": "2026-07-26T15:00:00-05:00",
+      "updated_at": "2026-08-12T15:00:00-05:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9100156",
+      "summary": "Build accessible React and TypeScript interfaces for the customer dashboard.",
+      "requirements": [
+        "3+ years with React",
+        "TypeScript",
+        "CSS and accessibility (WCAG)"
+      ],
+      "nice_to_have": [
+        "Next.js",
+        "Design systems"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100157,
+      "title": "Senior Full-Stack Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering: Growth",
+      "location": "Ontario, Canada",
+      "work_type": "Remote (must live in Ontario)",
+      "employment_type": "Part-time",
+      "pay": "CA$72,500 - CA$92,500",
+      "posted_at": "2026-11-08T17:00:00-05:00",
+      "updated_at": "2026-11-10T17:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9100157",
+      "summary": "Work across Next.js and Node services to run growth experiments end to end.",
+      "requirements": [
+        "5+ years full-stack",
+        "React/Next.js",
+        "Node.js",
+        "A/B testing"
+      ],
+      "nice_to_have": [
+        "Analytics pipelines",
+        "Mentoring"
+      ],
+      "_category": "frontend"
+    },
+    {
+      "id": 9100158,
+      "title": "Machine Learning Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: AI",
+      "location": "Argentina",
+      "work_type": "Remote (must be based in Argentina)",
+      "employment_type": "Full-time",
+      "pay": "US$60,000 - US$82,000",
+      "posted_at": "2026-08-10T10:00:00-05:00",
+      "updated_at": "2026-08-23T10:00:00-05:00",
+      "url": "https://jobs.example.com/fernbrook/jobs/9100158",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9100159,
+      "title": "Data Analyst",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": null,
+      "location": "Argentina",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": "2026-08-17T03:00:00-05:00",
+      "updated_at": "2026-08-17T03:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9100159",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "data"
+    },
+    {
+      "id": 9100160,
+      "title": "Data Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": "Engineering: Data Platform",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$125,000 - $165,000",
+      "posted_at": "2026-09-19T08:00:00-05:00",
+      "updated_at": "2026-09-26T08:00:00-05:00",
+      "url": "https://jobs.example.com/harborvine/jobs/9100160",
+      "summary": "Build batch and streaming pipelines into the warehouse.",
+      "requirements": [
+        "3+ years data engineering",
+        "SQL and Python",
+        "Airflow or Dagster",
+        "Snowflake or BigQuery"
+      ],
+      "nice_to_have": [
+        "Spark",
+        "dbt"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9199001,
+      "title": "Backend Engineer",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": null,
+      "location": "Toronto, Canada",
+      "work_type": "Hybrid",
+      "employment_type": null,
+      "pay": "CA$120,000 - CA$160,000",
+      "posted_at": "2026-10-09T05:00:00-05:00",
+      "updated_at": "2026-10-16T05:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9199001",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9199002,
+      "title": "Machine Learning Engineer",
+      "company": "Fernbrook Education",
+      "board_token": "fernbrook",
+      "department": "Engineering: AI",
+      "location": "New York, NY",
+      "work_type": "Hybrid (3 days in office)",
+      "employment_type": "Full-time",
+      "pay": "$165,000 - $225,500",
+      "posted_at": "2024-09-02T10:00:00-04:00",
+      "updated_at": "2024-09-10T10:00:00-04:00",
+      "url": "https://jobs.example.com/bluepinehealth/jobs/9199002",
+      "summary": "Train and deploy ranking and recommendation models; build embedding-based search.",
+      "requirements": [
+        "3+ years shipping ML to production",
+        "Python, PyTorch",
+        "Embeddings and vector search",
+        "MLOps basics"
+      ],
+      "nice_to_have": [
+        "LLM fine-tuning",
+        "LangChain or LangGraph"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9199003,
+      "title": "Remote Backend Engineer",
+      "company": "Orbitly",
+      "board_token": "orbitly",
+      "department": "Engineering",
+      "location": "Austin, TX",
+      "work_type": "On-site (relocation required)",
+      "employment_type": "Full-time",
+      "pay": "$120,000 - $150,000",
+      "posted_at": "2026-11-10T09:00:00-05:00",
+      "updated_at": "2026-11-10T09:00:00-05:00",
+      "url": "https://jobs.example.com/orbitly/jobs/9199003",
+      "summary": "Despite the title, this team works on-site in Austin.",
+      "requirements": [
+        "Python",
+        "PostgreSQL"
+      ],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9199004,
+      "title": "Sales Engineer",
+      "company": "Quartzline Security",
+      "board_token": "quartzline",
+      "department": "Sales: Solutions",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$110,000 - $130,000 base + commission",
+      "posted_at": "2026-11-01T09:00:00-05:00",
+      "updated_at": "2026-11-05T09:00:00-05:00",
+      "url": "https://jobs.example.com/quartzline/jobs/9199004",
+      "summary": "Run technical demos for prospects; light Python scripting for proofs of concept.",
+      "requirements": [
+        "2+ years in pre-sales or engineering",
+        "Python scripting",
+        "Presenting to customers"
+      ],
+      "nice_to_have": [
+        "Security products"
+      ],
+      "_category": "sales"
+    },
+    {
+      "id": 9199005,
+      "title": "Principal Engineer, AI Platform",
+      "company": "Northwind Labs",
+      "board_token": "northwindlabs",
+      "department": "Engineering: AI",
+      "location": "Anywhere in the United States",
+      "work_type": "Remote (US only)",
+      "employment_type": "Full-time",
+      "pay": "$240,000 - $310,000",
+      "posted_at": "2026-11-12T09:00:00-05:00",
+      "updated_at": "2026-11-12T09:00:00-05:00",
+      "url": "https://jobs.example.com/northwindlabs/jobs/9199005",
+      "summary": "Set technical direction for LLM agents, retrieval and evaluation.",
+      "requirements": [
+        "12+ years engineering",
+        "Led org-wide architecture",
+        "LLMs, RAG, agents (LangGraph)"
+      ],
+      "nice_to_have": [
+        "Published research"
+      ],
+      "_category": "data"
+    },
+    {
+      "id": 9199006,
+      "title": "Ingeniero/a de Software 🚀",
+      "company": "Lumen Freight",
+      "board_token": "lumenfreight",
+      "department": "Ingeniería",
+      "location": "Buenos Aires, Argentina",
+      "work_type": "Remote (Argentina)",
+      "employment_type": "Contract",
+      "pay": "USD 3.500–4.500 / month",
+      "posted_at": "2026-11-08T09:00:00-03:00",
+      "updated_at": "2026-11-08T09:00:00-03:00",
+      "url": "https://jobs.example.com/lumenfreight/jobs/9199006",
+      "summary": "Desarrollo de APIs en Python y React para logística.",
+      "requirements": [
+        "Python",
+        "React",
+        "Inglés intermedio"
+      ],
+      "nice_to_have": [],
+      "_category": "backend"
+    },
+    {
+      "id": 9199007,
+      "title": "Software Engineer",
+      "company": "Harbor & Vine",
+      "board_token": "harborvine",
+      "department": null,
+      "location": "",
+      "work_type": null,
+      "employment_type": null,
+      "pay": null,
+      "posted_at": null,
+      "updated_at": null,
+      "url": "https://jobs.example.com/harborvine/jobs/9199007",
+      "summary": null,
+      "requirements": [],
+      "nice_to_have": [],
+      "_category": "backend"
+    }
+  ]
+}
