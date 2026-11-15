@@ -98,3 +98,4 @@ def get_user_profile() -> dict:
         return {"error": "The user's profile couldn't be loaded. Tell the user and don't guess."}
 
 
+PROFILE_TOOLS = [get_user_profile, get_preferences, get_work_history, get_username]

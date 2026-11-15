@@ -1,5 +1,5 @@
 from langchain.agents import create_agent
-from langchain.agents.middleware import SummarizationMiddleware
+from langchain.agents.middleware import SummarizationMiddleware, ModelCallLimitMiddleware, ToolCallLimitMiddleware
 from langgraph.checkpoint.base import BaseCheckpointSaver
 
 from langchain_core.messages import AnyMessage, get_buffer_string
@@ -52,7 +52,11 @@ def build_agent(checkpointer: BaseCheckpointSaver | None = None):
         tools=ALL_TOOLS,
         system_prompt=SYSTEM_PROMPT,
         checkpointer=checkpointer,
-        middleware=[build_summarizer()],
+        middleware=[
+            build_summarizer(),
+            ToolCallLimitMiddleware(tool_name="search_jobs", run_limit=3),
+            ModelCallLimitMiddleware(run_limit=8)
+            ],
     )
 
 
