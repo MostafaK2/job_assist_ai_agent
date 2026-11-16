@@ -3,19 +3,51 @@ services:
     image: postgres:16
     container_name: agent-postgres
     environment:
-      POSTGRES_USER: agent
-      POSTGRES_PASSWORD: agent        # local dev only; use a strong password when deploying
-      POSTGRES_DB: agent
+      POSTGRES_USER: ${POSTGRES_USER:-agent}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agent}
+      POSTGRES_DB: ${POSTGRES_DB:-agent}
     ports:
-      - "127.0.0.1:5432:5432"         # only reachable from your own machine
+      - "127.0.0.1:5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U agent -d agent"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 3s
       retries: 10
     restart: unless-stopped
- 
+
+  backend:
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    container_name: agent-backend
+    env_file: .env
+    environment:
+      # Inside Docker the database is "db", not localhost. Overrides .env.
+      APP_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-agent}:${POSTGRES_PASSWORD:-agent}@db:5432/${POSTGRES_DB:-agent}
+      HEADLESS: "true"        # for Playwright later; harmless now
+    volumes:
+      - ./src/backend/data:/code/src/backend/data
+    shm_size: 1gb             # for Chromium later; harmless now
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./src/frontend
+      args:
+        BACKEND_URL: http://backend:8000
+        NEXT_PUBLIC_USE_MOCK: ${NEXT_PUBLIC_USE_MOCK:-false}
+    container_name: agent-frontend
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   pgdata:

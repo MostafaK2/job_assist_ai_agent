@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { parseEnv } from "node:util";
+
+try {
+  const rootEnv = parseEnv(readFileSync(path.resolve(import.meta.dirname, "../../.env"), "utf8"));
+  for (const [key, value] of Object.entries(rootEnv)) {
+    if ((key === "BACKEND_URL" || key.startsWith("NEXT_PUBLIC_")) && process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+} catch {
+  // no root .env (e.g. inside Docker): fine
+}
 
 // Security headers sent with every page (see your report's security section).
 const securityHeaders = [
@@ -12,6 +26,7 @@ const securityHeaders = [
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8000";
 
 const nextConfig = {
+  output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
