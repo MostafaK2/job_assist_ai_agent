@@ -55,7 +55,7 @@ def build_agent(checkpointer: BaseCheckpointSaver | None = None):
         middleware=[
             build_summarizer(),
             ToolCallLimitMiddleware(tool_name="search_jobs", run_limit=3),
-            ModelCallLimitMiddleware(run_limit=8)
+            ModelCallLimitMiddleware(run_limit=15)
             ],
     )
 

@@ -70,6 +70,7 @@ def _summary(job: dict) -> dict:
         summary = summary[:SUMMARY_MAX_CHARS].rstrip() + "…"
     return {
         "job_id": job["id"],
+        "board_token": job.get("board_token"),
         "title": job["title"],
         "company": job["company"],
         "location": job["location"],

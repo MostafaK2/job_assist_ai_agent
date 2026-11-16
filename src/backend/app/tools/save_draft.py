@@ -192,6 +192,10 @@ def prefill_from_profile(fields: list[dict], profile: dict) -> dict:
             value = _to_option(saved, field.get("options"))
             if value is not None:
                 prefilled[name], sources[name] = value, src
+            elif saved is not None and voluntary(field):                      # NEW (step 1)
+                # Self-ID answers are private (profile_for_agent hides them), so they're never
+                # sent to the model. No exact option match -> leave this voluntary question blank.
+                left_blank.append(field)
             elif saved is not None:          # saved, but not one of the options: model maps it
                 for_model.append(_for_model(field, "map_saved_answer",
                                             saved_answer=saved, saved_from=src))

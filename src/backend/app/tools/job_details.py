@@ -36,11 +36,11 @@ CACHE_SECONDS = 15 * 60
 BoardToken = Annotated[str, Field(pattern=r"^[a-z0-9_-]{2,60}$")]
 JobId = Annotated[int, Field(ge=1)]
 
-# Answers to these must come from the user, never from the model's guess.
 SENSITIVE = re.compile(
     r"authori[sz]|sponsor|visa|export|citizen|itar|clearance|conflict of interest|"
-    r"legal (first|last|name)|previously (worked|employed)|prior employment|applied|criminal|"
-    r"salary expectation",
+    r"legal (first|last|name)|prior employment|applied|criminal|salary expectation|"
+    r"history with|(ever|previously|formerly)\b.{0,20}\b(employed|worked|interviewed)|"
+    r"employed by|former employee|related to (an?|any) (employee|official)|government official",
     re.I,
 )
 
@@ -123,7 +123,7 @@ def _field_entry(name, label, ftype, required, options, section, description=Non
     if section in ("eeoc", "demographic"):
         entry["voluntary"] = True
         entry["answer_source"] = "user_only"     # never inferred; blank unless the user chose
-    elif SENSITIVE.search(label or ""):
+    elif SENSITIVE.search(f"{label or ''} {entry.get('help', '')}"):
         entry["answer_source"] = "user_only"     # legal/work status: from the user, not a guess
     else:
         entry["answer_source"] = "profile_or_draft"
