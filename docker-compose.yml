@@ -42,12 +42,33 @@ services:
         BACKEND_URL: http://backend:8000
         NEXT_PUBLIC_USE_MOCK: ${NEXT_PUBLIC_USE_MOCK:-false}
     container_name: agent-frontend
-    ports:
-      - "127.0.0.1:3000:3000"
     depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    container_name: agent-caddy
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    ports:
+      # Local: 127.0.0.1 = only your machine. Server: set BIND_IP=0.0.0.0 in .env.
+      - "${BIND_IP:-127.0.0.1}:80:80"
+      - "${BIND_IP:-127.0.0.1}:443:443"
+      - "${BIND_IP:-127.0.0.1}:443:443/udp"   # HTTP/3
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data        # certificates live here; keep them across restarts
+      - caddy_config:/config
+    depends_on:
+      frontend:
+        condition: service_healthy
       backend:
         condition: service_healthy
     restart: unless-stopped
 
 volumes:
   pgdata:
+  caddy_data:
+  caddy_config:

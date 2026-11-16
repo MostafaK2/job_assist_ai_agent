@@ -33,4 +33,18 @@ Frontend Docker File (to build the image)
     The standalone files only exist if next.config sets output: "standalone". Without it, the build stage won’t create .next/standalone and the image won’t build.
 
 
-    
+Docker compose spins up all of these services
+The way the application works is that wihtout caddy, nextjs is handling api/* routing to the backend
+    - Localhost:3000/api/* nextjs would route to localhost:8000/api/*
+    - everything else would be frontend
+    - Basically  Browser ──http──► Next.js :3000 ──http──► FastAPI :8000
+                  (pages + forwards /api/*)
+
+
+Caddy would take this out of nextjs hand and do this process itself. it sits on top of next js
+    - Caddy is a small web server and reverse proxy: it sits in front of your app, receives every request, and passes it to the right container. What sets it apart is automatic HTTPS:
+        - works with a real domain
+        - localhost as well
+    - basicllay: Browser ──https──► Caddy :443 ─┬─ /api/* ──http──► FastAPI :8000   (direct, no Node hop)
+                                                └─ /*     ──http──► Next.js :3000
+
