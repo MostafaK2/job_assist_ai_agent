@@ -9,7 +9,8 @@ from fastapi import APIRouter, HTTPException, Request
 from langchain_core.exceptions import ModelError, ModelRateLimitError
 from langchain_core.messages import AIMessage, HumanMessage
 
-from app.api.schemas import MAX_MESSAGE_CHARS, ChatRequest
+from app.api.job_decisions import decision_message
+from app.api.schemas import MAX_MESSAGE_CHARS, AddMessageCommand, ChatRequest, JobDecisionsCommand
 from app.db.chat_store import conversation_exists, parse_thread_id, save_messages, touch_conversation
 
 import json
@@ -70,7 +71,7 @@ def _user_messages(request: ChatRequest) -> list[HumanMessage]:
     """Turn the 'add-message' commands into LangChain messages (text only, length-limited)."""
     messages = []
     for command in request.commands:
-        if command.message.role != "user":
+        if not isinstance(command, AddMessageCommand) or command.message.role != "user": 
             continue  # only the user's own messages are accepted from the browser
         text = "\n".join(p.text for p in command.message.parts if p.type == "text" and p.text).strip()
         if text:
@@ -89,7 +90,10 @@ async def assistant(request: ChatRequest, http_request: Request):
         raise HTTPException(status_code=404, detail="Conversation not found")
     config = {"configurable": {"thread_id": str(conversation_id)}}
 
-    new_messages = _user_messages(request)
+    new_messages = _user_messages(request) + [                                            
+        await decision_message(conversation_id, c) for c in request.commands if isinstance(c, JobDecisionsCommand)
+    ]
+
     if not new_messages:
         raise HTTPException(status_code=400, detail="No message to send")
     # Save the user's message before the agent runs, so it's kept even if the agent fails.

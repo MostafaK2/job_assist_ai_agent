@@ -8,9 +8,11 @@ import {
   MessagePrimitive,
   SuggestionPrimitive,
   ThreadPrimitive,
-  useAssistantTransportState
+  useAssistantTransportState,
+  useAuiState
 } from "@assistant-ui/react";
 import MarkdownText from "@/components/chat/MarkdownText";
+import JobPicker from "@/components/chat/JobPicker";
 
 const isNewChat = (s) => s.thread.messages.length === 0;
 const isRunning = (s) => s.thread.isRunning;
@@ -136,10 +138,17 @@ function Composer() {
 }
 
 function UserMessage() {
+  // A Continue click on the job cards: show a short summary instead of the agent-facing text.
+  const decision = useAuiState((s) => s.message.metadata?.custom?.jobDecisions);
   return (
     <MessagePrimitive.Root className="flex justify-end">
       <div className="max-w-[80%] whitespace-pre-wrap rounded-2xl bg-ink px-4 py-2.5 text-white">
-        <MessagePrimitive.Parts />
+        {decision ? (
+          `Approved ${decision.approved.length} job${decision.approved.length === 1 ? "" : "s"}` +
+          (decision.skipped.length ? ` · skipped ${decision.skipped.length}` : "")
+        ) : (
+          <MessagePrimitive.Parts />
+        )}
       </div>
     </MessagePrimitive.Root>
   );
@@ -149,7 +158,7 @@ function AssistantMessage() {
   return (
     <MessagePrimitive.Root className="group flex flex-col gap-2">
       <div className="leading-relaxed">
-        <MessagePrimitive.Parts components={{ Text: MarkdownText }} />
+          <MessagePrimitive.Parts components={{ Text: MarkdownText, tools: { by_name: { search_jobs: JobPicker } } }} />
       </div>
 
       <MessagePrimitive.Error>

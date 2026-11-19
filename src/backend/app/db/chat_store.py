@@ -73,3 +73,15 @@ async def touch_conversation(conversation_id: uuid.UUID, first_user_text: str) -
             .values(updated_at=func.now(), title=func.coalesce(Conversation.title, title))
         )
         await session.commit()
+
+async def find_tool_message(conversation_id: uuid.UUID, tool_call_id: str, tool_name: str) -> dict | None:
+    """A saved tool result (as stored, incl. its artifact), looked up on the server, never the browser."""
+    async with SessionLocal() as session:
+        return await session.scalar(
+            select(ChatMessage.content).where(
+                ChatMessage.conversation_id == conversation_id,
+                ChatMessage.role == "tool",
+                ChatMessage.content["tool_call_id"].astext == tool_call_id,
+                ChatMessage.content["name"].astext == tool_name,
+            )
+        )
