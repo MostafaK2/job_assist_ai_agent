@@ -21,8 +21,6 @@ import httpx
 from langchain.tools import tool
 from pydantic import Field
 
-from .search_jobs import load_jobs  # the same job list search_jobs uses
-
 log = logging.getLogger("agent.tools")
 
 API = "https://boards-api.greenhouse.io/v1/boards"

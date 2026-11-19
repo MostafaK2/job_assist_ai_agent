@@ -7,6 +7,7 @@ stable ids (board_token, job_id) instead of a foreign key to jobs.
 import enum
 import uuid
 from datetime import datetime
+from sqlalchemy import Computed
 
 from sqlalchemy import (
     BigInteger,
@@ -21,7 +22,7 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
 )
-from sqlalchemy.dialects.postgresql import JSONB, UUID, ARRAY
+from sqlalchemy.dialects.postgresql import JSONB, UUID, ARRAY, TSVECTOR
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -78,14 +79,25 @@ class Job(Base):
     # e.g. [{"city": "Boston", "state": "MA", "country": "US", "region": "North America"}]
     work_types: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list, server_default="{}")
     # remote / hybrid / onsite; empty = unknown
+
+    # Full-text search over title (weight A), department (B) and description (C).
+    # Postgres keeps it up to date by itself (generated column), so the sync never writes it.
+    search_tsv: Mapped[str] = mapped_column(TSVECTOR, Computed(
+        "setweight(to_tsvector('english', coalesce(title, '')), 'A') || "
+        "setweight(to_tsvector('english', coalesce(department, '')), 'B') || "
+        "setweight(to_tsvector('english', coalesce(description_text, '')), 'C')",
+        persisted=True,
+    ))
     
 
     __table_args__ = (
         Index("ix_jobs_board_token_job_id", "board_token", "job_id"),
         Index("ix_jobs_is_active_company_id", "is_active", "company_id"),
         Index("ix_jobs_work_types", "work_types", postgresql_using="gin"),
-        Index("ix_jobs_locations", "locations", postgresql_using="gin",
-              postgresql_ops={"locations": "jsonb_path_ops"}),
+        Index("ix_jobs_locations", "locations", postgresql_using="gin", postgresql_ops={"locations": "jsonb_path_ops"}),
+        
+        Index("ix_jobs_search_tsv", "search_tsv", postgresql_using="gin"),
+        Index("ix_jobs_title_trgm", "title", postgresql_using="gin", postgresql_ops={"title": "gin_trgm_ops"}),
     )
 
 
