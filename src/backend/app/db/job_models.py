@@ -54,7 +54,7 @@ class Job(Base):
     title: Mapped[str] = mapped_column(Text)
     location: Mapped[str | None] = mapped_column(Text)
     absolute_url: Mapped[str | None] = mapped_column(Text)  # the apply link
-    departments: Mapped[list] = mapped_column(JSONB, default=list, server_default="[]")
+    department: Mapped[str | None] = mapped_column(Text)  # Greenhouse sends 0 or 1
 
     # Timing
     date_posted: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))  # first_published
