@@ -21,7 +21,7 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
 )
-from sqlalchemy.dialects.postgresql import JSONB, UUID
+from sqlalchemy.dialects.postgresql import JSONB, UUID, ARRAY
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -72,10 +72,20 @@ class Job(Base):
     description_markdown: Mapped[str | None] = mapped_column(Text)
     description_text: Mapped[str | None] = mapped_column(Text)  # plain text for search / the LLM
     raw: Mapped[dict] = mapped_column(JSONB)  # the whole Greenhouse object, so no field is ever lost
+    # Parsed from location / offices / description by app/ingest/location_parser.py.
+    # `location` above stays exactly what Greenhouse sent.
+    locations: Mapped[list] = mapped_column(JSONB, default=list, server_default="[]")
+    # e.g. [{"city": "Boston", "state": "MA", "country": "US", "region": "North America"}]
+    work_types: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list, server_default="{}")
+    # remote / hybrid / onsite; empty = unknown
+    
 
     __table_args__ = (
         Index("ix_jobs_board_token_job_id", "board_token", "job_id"),
         Index("ix_jobs_is_active_company_id", "is_active", "company_id"),
+        Index("ix_jobs_work_types", "work_types", postgresql_using="gin"),
+        Index("ix_jobs_locations", "locations", postgresql_using="gin",
+              postgresql_ops={"locations": "jsonb_path_ops"}),
     )
 
 

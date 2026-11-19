@@ -26,6 +26,9 @@ from app.db.job_models import Company, Job
 from app.ingest.greenhouse_client import BoardFetchError, fetch_board_jobs
 from app.ingest.html_text import html_to_text, unescape_html
 
+# Parsers
+from app.ingest.location_parser import parse_job_location
+
 COMPANIES_FILE = Path(__file__).resolve().parents[2] / "data" / "greenhouse_companies.json"
 MAX_WORKERS = 8      # boards fetched at the same time
 INSERT_CHUNK = 1000  # job rows per INSERT
@@ -46,13 +49,13 @@ def to_job_row(job: dict, company_id: int, company_name: str, board_token: str, 
     if not job_id or not title:
         return None
     content = unescape_html(job.get("content") or "")
+    description_text = html_to_text(content, formatted=False) or None  
     return {
         "company_id": company_id,
         "job_id": int(job_id),
         "company_name": company_name,
         "board_token": board_token,
         "title": title,
-        "location": (job.get("location") or {}).get("name"),
         "absolute_url": job.get("absolute_url"),
         "departments": [d.get("name") for d in job.get("departments") or [] if d.get("name")],
         "date_posted": parse_ts(job.get("first_published")),
@@ -64,8 +67,9 @@ def to_job_row(job: dict, company_id: int, company_name: str, board_token: str, 
         "is_active": True,
         "description_html": content or None,
         "description_markdown": html_to_text(content, markdown=True) or None,
-        "description_text": html_to_text(content, formatted=False) or None,
+        "description_text": description_text,
         "raw": job,
+        **parse_job_location(job, description_text=description_text),
     }
 
 
