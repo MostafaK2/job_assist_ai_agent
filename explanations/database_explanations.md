@@ -6,7 +6,7 @@ Database connection:
 Database migration steps (MUST RUN FROM )
     Initialization
         alembic xxxx
-    Revision/Upgrade
+    Revision/Upgrade (once you made changes to a file)
         alembic revision --autogenerate -m "add companies jobs job_applications"
 
     Upgrading 
