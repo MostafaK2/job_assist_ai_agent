@@ -1,0 +1,72 @@
+[
+  {
+    "industry": "Financial Services & Insurance",
+    "company": "Coinbase",
+    "board_token": "coinbase"
+  },
+  {
+    "industry": "Financial Services & Insurance",
+    "company": "Stripe",
+    "board_token": "stripe"
+  },
+  {
+    "industry": "Financial Services & Insurance",
+    "company": "Oscar Health",
+    "board_token": "oscar"
+  },
+  {
+    "industry": "Healthcare & Pharmaceuticals",
+    "company": "Recursion Pharmaceuticals",
+    "board_token": "recursionpharmaceuticals"
+  },
+  {
+    "industry": "Automotive & Manufacturing",
+    "company": "Nuro",
+    "board_token": "nuro"
+  },
+  {
+    "industry": "Information Technology & Telecoms",
+    "company": "Cloudflare",
+    "board_token": "cloudflare"
+  },
+  {
+    "industry": "Information Technology & Telecoms",
+    "company": "Twilio",
+    "board_token": "twilio"
+  },
+  {
+    "industry": "Information Technology & Telecoms",
+    "company": "GitLab",
+    "board_token": "gitlab"
+  },
+  {
+    "industry": "Retail & E-Commerce",
+    "company": "Peloton",
+    "board_token": "peloton"
+  },
+  {
+    "industry": "Food & Agriculture",
+    "company": "Instacart",
+    "board_token": "instacart"
+  },
+  {
+    "industry": "Food & Agriculture",
+    "company": "DoorDash",
+    "board_token": "doordashusa"
+  },
+  {
+    "industry": "Food & Agriculture",
+    "company": "HelloFresh",
+    "board_token": "hellofresh"
+  },
+  {
+    "industry": "Transportation & Logistics",
+    "company": "Flexport",
+    "board_token": "flexport"
+  },
+  {
+    "industry": "Transportation & Logistics",
+    "company": "Lyft",
+    "board_token": "lyft"
+  }
+]

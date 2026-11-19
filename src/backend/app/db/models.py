@@ -2,7 +2,17 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import BigInteger, Boolean, DateTime, ForeignKey, Index, String, Text, UniqueConstraint, func, text
+from sqlalchemy import (
+    BigInteger, 
+    Boolean, 
+    DateTime, 
+    ForeignKey, 
+    Index, 
+    String, 
+    Text, 
+    UniqueConstraint, 
+    func, 
+    text)
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -77,3 +87,6 @@ class ChatMessage(Base):
         # Opening a chat: "this conversation's messages, in order"
         Index("ix_chat_messages_conversation_id_id", "conversation_id", "id"),
     )
+
+
+from app.db.job_models import Company, Job, JobApplication  # noqa: E402,F401
