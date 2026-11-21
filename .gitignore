@@ -6,3 +6,4 @@ credentials.json
 token.json
 /data
 caddy-root.crt
+data/*.db

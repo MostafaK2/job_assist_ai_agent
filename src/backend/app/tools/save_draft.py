@@ -346,19 +346,19 @@ def prefill_from_profile(fields: list[dict], profile: dict) -> dict:
 
 #     jobs = [
 #         ("nuro", 7902399),
-#         ("recursionpharmaceuticals", 8334716),
-#         ("lyft", 8834157002),
-#         ("stripe", 8168813),
-#         ("oscar", 8301400),
-#         ("flexport", 8136589),
-#         ("coinbase", 8357772),
-#         ("gitlab", 8871406002),
-#         ("instacart", 7793391),
-#         ("hellofresh", 8345649),
-#         ("twilio", 8249285),
-#         ("doordashusa", 8279250),
-#         ("peloton", 7290826),
-#         ("cloudflare", 8328562),
+#         # ("recursionpharmaceuticals", 8334716),
+#         # ("lyft", 8834157002),
+#         # ("stripe", 8168813),
+#         # ("oscar", 8301400),
+#         # ("flexport", 8136589),
+#         # ("coinbase", 8357772),
+#         # ("gitlab", 8871406002),
+#         # ("instacart", 7793391),
+#         # ("hellofresh", 8345649),
+#         # ("twilio", 8249285),
+#         # ("doordashusa", 8279250),
+#         # ("peloton", 7290826),
+#         # ("cloudflare", 8328562),
 #     ]   
 
 #     for board_token, job_id in jobs:
@@ -370,6 +370,7 @@ def prefill_from_profile(fields: list[dict], profile: dict) -> dict:
 #             continue
     
 #         pre = prefill_from_profile(form["fields"], profile)
+#         print(json.dumps(pre, indent=2))
 #         print("PREFILLED")
 #         for n, v in pre["prefilled"].items():
 #             print(f"  {n:<16} = {str(v)[:45]!r:<48} <- {pre['sources'][n]}")
