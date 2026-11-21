@@ -30,7 +30,20 @@ class JobDecisionsCommand(BaseModel):
     skipped: list[Annotated[str, Field(max_length=300)]] = Field(default_factory=list, max_length=20)
 
 
-Command = Annotated[Union[AddMessageCommand, JobDecisionsCommand], Field(discriminator="type")]
+class ReviewDecisionCommand(BaseModel):
+    """A button on a save_models_answers review card. The draft itself is looked up on the server."""
+    model_config = ConfigDict(populate_by_name=True)
+
+    type: Literal["review-decision"]
+    tool_call_id: str = Field(alias="toolCallId", min_length=1, max_length=200)
+    decision: Literal["approve", "changes", "skip"]
+    # The user's own answers for editable questions (used on approve only), {field name: value}.
+    edits: dict[Annotated[str, Field(max_length=100)], Annotated[str, Field(max_length=10_000)]] = Field(
+        default_factory=dict, max_length=60)
+    note: str = Field("", max_length=2000)  # what to change (decision "changes")
+
+
+Command = Annotated[Union[AddMessageCommand, JobDecisionsCommand, ReviewDecisionCommand], Field(discriminator="type")]
 
 class ChatRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True, extra="ignore")
@@ -41,4 +54,3 @@ class ChatRequest(BaseModel):
     # What the browser currently shows. Sent back to the browser for display only;
     # NEVER passed to the agent, because anyone can edit it in their browser.
     state: dict[str, Any] | None = None
-

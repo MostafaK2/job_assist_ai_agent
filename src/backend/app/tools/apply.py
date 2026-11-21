@@ -2,15 +2,17 @@
 
     code_prepare_application(board_token, job_id)  code pre-fills the form from the profile;
                                                    returns only the REQUIRED questions left for the model
-    save_models_answers(application_id, answers)    merges the model's answers with the prefilled
-                                                   ones, checks everything, saves a draft
-    fill_application(draft_id)                     (step 3) fills the real form, never submits;
-                                                   runs only after the user approves (Gate 2)
+    save_models_answers(application_id, answers)   merges the model's answers with the prefilled
+                                                   ones, checks everything, saves a draft and shows
+                                                   it to the user as a review card (the artifact)
+    Gate 2: the user approves, asks for changes or skips on that card (app/api/review_decision.py).
+    Filling the real form comes after approval (not built yet); nothing is ever submitted.
 
 Everything that matters lives on the server (store.py: SQLite in data/applications.db); the
 model only carries ids. Private details (email, phone, address, self-ID answers) are filled by
 code and never shown to the model.
 """
+import json
 import logging
 import re
 import uuid
@@ -39,6 +41,7 @@ PRIVATE_SOURCES = (PRIVATE, "profile.identity.email", "profile.identity.phone", 
 class Answer(BaseModel):
     name: Annotated[str, Field(max_length=100, description='The question\'s "name"')]
     value: Annotated[str, Field(max_length=10_000, description="The answer (dropdowns: one of the options)")]
+    reason: Annotated[str, Field(max_length=300, description="One short line on why, shown to the user")] = ""
 
 
 def _new_id(prefix: str) -> str:
@@ -141,25 +144,26 @@ def code_prepare_application(board_token: BoardToken, job_id: JobId) -> dict:
     }
 
 
-@tool
+@tool(response_format="content_and_artifact")
 def save_models_answers(
     application_id: Annotated[str, Field(pattern=r"^app_[0-9a-f]{12}$")],
     answers: Annotated[list[Answer], Field(max_length=60)],
-) -> dict:
+) -> tuple[str, dict | None]:
     """Save your answers to the questions from code_prepare_application and check them.
     Answers for fields that were already filled from the profile are refused.
 
     - "problems": your mistakes (e.g. not an exact option). Fix them and call again (at most twice).
     - "left_for_user": required questions only the user can answer (missing contact details,
-      file uploads, self-ID). Don't ask about them: they're shown on the approval card.
-    Status is "ready" or "needs_review"; either way, move on to the user's approval, then
-    fill_application(draft_id). Nothing is sent to the employer by this tool.
+      file uploads, self-ID). Don't ask about them: they're shown on the review card.
+    Status is "ready" or "needs_review". Once no problems are left, STOP: the user reviews the
+    draft on a card in the chat and approves, skips or asks for changes there. Don't list the
+    answers in your reply. Nothing is sent to the employer by this tool.
     """
     app = store.get("applications", application_id)
     if app is None:
-        return {"error": "Unknown or expired application_id. Call code_prepare_application again."}
+        return "Unknown or expired application_id. Call code_prepare_application again.", None
 
-    values, sources, problems = dict(app["prefilled"]), dict(app["sources"]), []
+    values, sources, problems, reasons = dict(app["prefilled"]), dict(app["sources"]), [], {}
     for a in answers:
         field = app["for_model"].get(a.name)
         if a.name in app["prefilled"]:
@@ -172,6 +176,7 @@ def save_models_answers(
                 problems.append({"name": a.name, "label": field["label"], "issue": problem})
             else:
                 values[a.name], sources[a.name] = value, "model"
+                reasons[a.name] = re.sub(r"\s+", " ", a.reason).strip()
 
     form = app["form"]
     unanswered = [f for f in form["fields"]
@@ -180,7 +185,9 @@ def save_models_answers(
                  for f in unanswered if f["name"] in app["for_model"]
                  and not any(p["name"] == f["name"] for p in problems)]
     missing = list(dict.fromkeys(f["label"] for f in unanswered if f["name"] not in app["for_model"]))
-    status = "ready" if not unanswered else "needs_review"   # user fills the rest on the approval card
+    status = "ready" if not unanswered else "needs_review"   # user fills the rest on the review card
+    # What the user may set on the card: the model's questions, and required blanks a person can type.
+    editable = sorted(set(app["for_model"]) | {f["name"] for f in unanswered if f.get("type") != "input_file"})
 
     draft_id = _new_id("draft")
     store.put("drafts", draft_id, {
@@ -193,31 +200,61 @@ def save_models_answers(
         "answers": values,
         "sources": sources,
         "resume_file": app["resume_file"],
-        "status": status,            # "approved" is set only by the approval step
+        "reasons": reasons,
+        "editable": editable,
+        "status": status,            # "approved" / "skipped" are set only by the review step
     })
-    return {"draft_id": draft_id, "status": status, "answered": len(values),
-            "problems": problems, "left_for_user": missing}
+    store.put("applications", application_id, {**app, "latest_draft": draft_id})
+    result = {"draft_id": draft_id, "status": status, "answered": len(values),
+              "problems": problems, "left_for_user": missing}
+    return json.dumps(result), review_card(draft_id)
 
 
-def draft_summary(draft_id: str, include_private: bool = False) -> list[dict]:
-    """The draft as label/value/source rows, for the approval message shown to the USER.
-    Private values are masked unless include_private (never pass that to the model)."""
+def _section(field: dict, draft: dict) -> str | None:
+    name, source = field["name"], draft["sources"].get(field["name"], "")
+    names = field.get("one_of") or [name]
+    if not any(n in draft["answers"] for n in names):
+        return "needs_you" if _required(field) else None   # optional blanks aren't shown
+    if source == "model":
+        return "assistant"
+    return "auto" if source.startswith("auto.") else "profile"
+
+
+def review_card(draft_id: str) -> dict | None:
+    """The review card's data (the tool message's artifact: the chat shows it, the model never
+    sees it). Private values are masked; one row per question (a one_of group is one row)."""
     draft = store.get("drafts", draft_id)
     if draft is None:
-        return []
+        return None
     rows, seen = [], set()
     for f in draft["fields"]:
-        name = f["name"]
-        if name not in draft["answers"] or name in seen:
+        group = tuple(f.get("one_of") or [f["name"]])
+        if group in seen or f.get("type") == "input_hidden":
             continue
-        seen.add(name)
-        value, source = draft["answers"][name], draft["sources"].get(name, "")
+        # The member that's answered, else the one a person can type into (resume text, not file).
+        f = next((x for x in draft["fields"] if x["name"] in group and x["name"] in draft["answers"]),
+                 next((x for x in draft["fields"] if x["name"] in group and x["name"] in draft["editable"]), f))
+        if (section := _section(f, draft)) is None:
+            continue
+        seen.add(group)
+        name, source = f["name"], draft["sources"].get(f["name"], "")
+        value = draft["answers"].get(name)
+        masked = value is not None and _is_private(f, source)
         if value == RESUME_TOKEN:
-            value = Path(draft["resume_file"] or "").name or "(resume on file)"
-        elif _is_private(f, source) and not include_private:
-            value = "(on file)"
-        rows.append({"label": f["label"], "value": value, "source": source})
-    return rows
+            value = Path(draft["resume_file"] or "").name or "Resume on file"
+        rows.append({
+            "name": name, "label": f["label"], "type": f.get("type"), "required": _required(f),
+            "options": f.get("options") or [], "section": section, "source": source,
+            "value": None if masked else value, "masked": masked,
+            "editable": name in draft["editable"], "reason": draft["reasons"].get(name, ""),
+        })
+    return {
+        "draft_id": draft_id,
+        "status": draft["status"],
+        "job": {"title": draft["title"], "url": draft["url"],
+                "id": f'{draft["board_token"]}/{draft["job_id"]}'},
+        "rows": rows,
+    }
 
 
 APPLY_TOOLS = [code_prepare_application, save_models_answers]

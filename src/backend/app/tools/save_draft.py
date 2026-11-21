@@ -25,7 +25,7 @@ Policy
 import re
 from datetime import date
 
-RESUME_TOKEN = "PROFILE_RESUME"  # save_draft_answers swaps this for the real PDF
+RESUME_TOKEN = "PROFILE_RESUME"  # the form-filling step swaps this for the real PDF
 
 # Optional questions are filled only from these sources (name, links, address, self-ID, resume).
 OPTIONAL_FILL = ("profile.identity", "profile.links", "profile.address",

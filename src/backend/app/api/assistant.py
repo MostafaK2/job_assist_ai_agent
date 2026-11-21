@@ -10,7 +10,9 @@ from langchain_core.exceptions import ModelError, ModelRateLimitError
 from langchain_core.messages import AIMessage, HumanMessage
 
 from app.api.job_decisions import decision_message
-from app.api.schemas import MAX_MESSAGE_CHARS, AddMessageCommand, ChatRequest, JobDecisionsCommand
+from app.api.review_decision import review_message
+from app.api.schemas import (MAX_MESSAGE_CHARS, AddMessageCommand, ChatRequest, JobDecisionsCommand,
+                             ReviewDecisionCommand)
 from app.db.chat_store import conversation_exists, parse_thread_id, save_messages, touch_conversation
 
 import json
@@ -90,9 +92,14 @@ async def assistant(request: ChatRequest, http_request: Request):
         raise HTTPException(status_code=404, detail="Conversation not found")
     config = {"configurable": {"thread_id": str(conversation_id)}}
 
-    new_messages = _user_messages(request) + [                                            
-        await decision_message(conversation_id, c) for c in request.commands if isinstance(c, JobDecisionsCommand)
-    ]
+    # Card buttons (Gate 1 job picker, Gate 2 review card): checked against server-side data.
+    decisions = []
+    for c in request.commands:
+        if isinstance(c, JobDecisionsCommand):
+            decisions.append(await decision_message(conversation_id, c))
+        elif isinstance(c, ReviewDecisionCommand):
+            decisions.append(await review_message(conversation_id, c))
+    new_messages = _user_messages(request) + [d.message for d in decisions]
 
     if not new_messages:
         raise HTTPException(status_code=400, detail="No message to send")
@@ -100,6 +107,8 @@ async def assistant(request: ChatRequest, http_request: Request):
     # If it was already saved (double click, network retry, replayed request), don't run again.
     if await save_messages(conversation_id, new_messages) == 0:
         raise HTTPException(status_code=409, detail="This message was already sent")
+    for decision in decisions:
+        decision.after_save() 
     await touch_conversation(conversation_id, new_messages[0].content)
 
     async def run(controller: RunController):

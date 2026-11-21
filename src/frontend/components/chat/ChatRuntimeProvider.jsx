@@ -31,6 +31,16 @@ function converter(state, connection) {
 }
 
 const EMPTY_STATE = { messages: [], summarizing: false };
+/**
+ * A card button (job picker, review card) whose request failed, e.g. the server refused an edit.
+ * Recorded in the chat state so that card can unlock and show the error instead of "sent".
+ */
+export function recordFailedCommands(error, { commands, updateState }) {
+  const failed = commands
+    .filter((c) => c.type === "review-decision" || c.type === "job-decisions")
+    .map((c) => ({ toolCallId: c.toolCallId, at: Date.now(), message: error?.message ?? "" }));
+  if (failed.length) updateState((s) => ({ ...s, failedCommands: [...(s.failedCommands ?? []), ...failed].slice(-10) }));
+}
 
 /** One chat conversation, talking to POST /api/assistant on the Python backend. */
 function useJobAssistRuntime() {
@@ -40,6 +50,7 @@ function useJobAssistRuntime() {
     initialState: EMPTY_STATE,
     converter,
     headers: { "Content-Type": "application/json" },
+    onError: recordFailedCommands,
   });
   useSavedMessages(runtime);
   return runtime;
