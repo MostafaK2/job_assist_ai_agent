@@ -113,6 +113,7 @@ def prepare_application(board_token: BoardToken, job_id: JobId) -> dict:
         form = load_form(board_token, job_id)
     except (httpx.HTTPError, ValueError) as err:
         return _error(board_token, job_id, err)
+    
     try:
         profile = load_full_profile()
     except (OSError, LookupError, ValueError) as err:
@@ -121,6 +122,7 @@ def prepare_application(board_token: BoardToken, job_id: JobId) -> dict:
 
     pre = prefill_from_profile(form["fields"], profile)
     resume = resume_file(profile)
+
     if RESUME_TOKEN in pre["prefilled"].values() and resume is None:  # path saved but file bad
         name = next(n for n, v in pre["prefilled"].items() if v == RESUME_TOKEN)
         pre["prefilled"].pop(name), pre["sources"].pop(name)

@@ -3,10 +3,14 @@
   "profiles": [
     {
       "user_id": "dev-user-1",
+      "resume_path": "data/test_resume.pdf",
       "identity": {
         "first_name": "Alex",
         "last_name": "Rivera",
-        "preferred_name": "Alex",
+        "legal_first_name": "Alexander",
+        "legal_last_name": "Rivera",
+        "preferred_first_name": "Alex",
+        "preferred_last_name": "Rivera",
         "suffix": null,
         "email": "alex.rivera@example.com",
         "phone": "+1-555-010-0101",
@@ -86,12 +90,19 @@
         "requires_sponsorship_now": false,
         "requires_sponsorship_future": false
       },
+      "citizenship": {
+        "status": "U.S. citizen",
+        "countries": ["United States"],
+        "us_person": true
+      },
       "voluntary_self_identification": {
         "gender": "Male",
         "ethnicity": "Asian",
         "disability": "None",
         "lgbtq": "No",
-        "veteran_status": "No"
+        "veteran_status": "No",
+        "transgender": "No",
+        "sexual_orientation": "I don't wish to answer"
       },
       "preferences": {
         "locations": ["New York, NY", "Philadelphia, PA", "Remote (US)"],
@@ -117,7 +128,20 @@
         "how_did_you_hear": "Company careers page",
         "notice_period": "Available after graduation in May 2027",
         "previously_employed_here": "No",
-        "willing_to_travel": "Up to 10%"
+        "willing_to_travel": "0 - 10%",
+        "willing_to_relocate": "Yes",
+        "willing_to_relocate_at_own_expense": "Yes",
+        "can_you_perform_essential_functions": "Yes",
+        "have_you_been_convicted": "No",
+        "have_you_been_convicted_explanation": null,
+        "have_you_been_convicted_explanation_confidential": null,
+        "did_you_serve_in_military": "No",
+        "may_contact_current_employer": "Yes",
+        "sms_opt_in": "No",
+        "government_official": "No",
+        "relative_of_government_official": "No",
+        "conflict_of_interest": "No",
+        "has_employment_restrictions": "No"
       }
     }
   ]
