@@ -14,6 +14,7 @@ import {
 import MarkdownText from "@/components/chat/MarkdownText";
 import JobPicker from "@/components/chat/JobPicker";
 import ReviewCard from "@/components/chat/ReviewCard";
+import FillCard from "@/components/chat/FillCard";
 
 const isNewChat = (s) => s.thread.messages.length === 0;
 const isRunning = (s) => s.thread.isRunning;
@@ -142,6 +143,7 @@ function UserMessage() {
   // A click on a card (job picker, review card): show a short summary instead of the agent-facing text.
   const decision = useAuiState((s) => s.message.metadata?.custom?.jobDecisions);
   const review = useAuiState((s) => s.message.metadata?.custom?.reviewDecision);
+  const fill = useAuiState((s) => s.message.metadata?.custom?.fillEvent);
   return (
     <MessagePrimitive.Root className="flex justify-end">
       <div className="max-w-[80%] whitespace-pre-wrap rounded-2xl bg-ink px-4 py-2.5 text-white">
@@ -150,6 +152,8 @@ function UserMessage() {
           (decision.skipped.length ? ` · skipped ${decision.skipped.length}` : "")
         ) : review ? (
           reviewSummary(review)
+        ) : fill ? (
+          `${fill.event === "submitted" ? "Submitted" : "Skipped"}: ${fill.job}`
         ) : (
           <MessagePrimitive.Parts />
         )}
@@ -169,7 +173,7 @@ function AssistantMessage() {
     <MessagePrimitive.Root className="group flex flex-col gap-2">
       <div className="leading-relaxed">
           <MessagePrimitive.Parts
-            components={{ Text: MarkdownText, tools: { by_name: { search_jobs: JobPicker, save_models_answers: ReviewCard } } }}
+            components={{ Text: MarkdownText, tools: { by_name: { search_jobs: JobPicker, save_models_answers: ReviewCard, fill_application: FillCard} } }}
           />
       </div>
 
