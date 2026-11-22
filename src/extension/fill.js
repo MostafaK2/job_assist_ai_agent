@@ -91,14 +91,27 @@
     el.dispatchEvent(new Event("input", { bubbles: true }));
   }
 
+  const digits = (s) => String(s ?? "").replace(/\D/g, "");
+
+  /** Did the page keep what we typed? Phone fields reformat ("555-010-0101" -> "(555) 010-0101"). */
+  function kept(el, value) {
+    const v = String(value), shown = el.value;
+    if (shown === v) return true;
+    if (el.type === "tel" || /phone/i.test(el.id + el.name)) {
+      const a = digits(shown), b = digits(v);
+      return a.length >= 7 && (a.endsWith(b) || b.endsWith(a));
+    }
+    return false;
+  }
+
   async function fillText(el, value) {
     el.focus();
     setNative(el, String(value));
     el.dispatchEvent(new Event("change", { bubbles: true }));
-    el.dispatchEvent(new FocusEvent("blur"));
+    el.blur();
     el.dispatchEvent(new FocusEvent("focusout", { bubbles: true }));
-    await sleep(30);
-    return el.value === String(value) ? { ok: true, shown: el.value } : { ok: false, reason: "the page didn't keep the value" };
+    await sleep(80);
+    return kept(el, value) ? { ok: true, shown: el.value } : { ok: false, reason: "the page didn't keep the value" };
   }
 
   async function fillSelect(el, value) {
@@ -136,16 +149,24 @@
   }
 
   // -------- combobox (react-select: Greenhouse's "Select..." dropdowns, incl. search-as-you-type)
+  // Greenhouse opens these on mouseUP, so every click sends the full press a real mouse makes.
   const controlOf = (input) => input.closest("[class*='select__control'], [class*='select-control']") ?? input.parentElement;
   const containerOf = (input) => input.closest("[class*='select__container'], [class*='select-container']") ?? controlOf(input).parentElement;
+  const isOpen = (input) => input.getAttribute("aria-expanded") === "true";
 
+  function press(el, hover = false) {
+    const types = [...(hover ? ["pointerover", "mouseover"] : []), "pointerdown", "mousedown", "pointerup", "mouseup", "click"];
+    for (const t of types) {
+      const Ev = t.startsWith("pointer") ? PointerEvent : MouseEvent;
+      el.dispatchEvent(new Ev(t, { bubbles: true, cancelable: true, button: 0, view: window }));
+    }
+  }
+
+  /** Only this dropdown's own options (the page has hundreds of hidden ones from other widgets). */
   function optionNodes(input) {
-    const listId = input.getAttribute("aria-controls") || input.getAttribute("aria-owns");
-    const list = listId && document.getElementById(listId);
-    const scope = list ?? containerOf(input) ?? document;
-    let nodes = [...scope.querySelectorAll("[role='option']")].filter(visible);
-    if (!nodes.length) nodes = [...document.querySelectorAll("[role='option']")].filter(visible); // menu in a portal
-    return nodes;
+    const listId = input.getAttribute("aria-controls") || input.getAttribute("aria-owns") || `react-select-${input.id}-listbox`;
+    const scope = document.getElementById(listId) ?? containerOf(input);
+    return scope ? [...scope.querySelectorAll("[role='option']")].filter(visible) : [];
   }
 
   /** Options once they've appeared and stopped changing (search fields load them from a server). */
@@ -162,65 +183,56 @@
     }
   }
 
-  function mouse(el, type) {
-    el.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, button: 0, view: window }));
-  }
-
   async function openCombo(input) {
-    input.focus();
-    mouse(controlOf(input), "mousedown");
-    await sleep(120);
-    if (!optionNodes(input).length) {
-      input.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", code: "ArrowDown", keyCode: 40, bubbles: true }));
-      await sleep(120);
-    }
+    if (isOpen(input)) return true;
+    press(controlOf(input));
+    if (await JA.waitFor(() => isOpen(input), 600, 50)) return true;
+    input.focus();   // keyboard fallback
+    for (const t of ["keydown", "keyup"]) input.dispatchEvent(new KeyboardEvent(t, { key: "ArrowDown", code: "ArrowDown", keyCode: 40, bubbles: true }));
+    return !!(await JA.waitFor(() => isOpen(input), 600, 50));
   }
 
-  function closeCombo(input) {
-    input.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", code: "Escape", keyCode: 27, bubbles: true }));
+  function closeCombo(input) {   // Escape is ignored by Greenhouse; leaving the field closes it
+    if (input.value) setNative(input, "");
     input.blur();
   }
 
-  /** Searches to try for a search-as-you-type field: full value, then shorter forms. */
+  /** What the dropdown shows as chosen (one value, or chips for multi-select). */
+  const chosen = (input) => [...containerOf(input).querySelectorAll("[class*='single-value'], [class*='multi-value__label']")]
+    .map((n) => n.innerText.trim());
+
+  /** Searches to try for a search-as-you-type field: "Philadelphia, PA" finds nothing, "Philadelphia" does. */
   JA.queries = (value) => {
     const v = String(value).trim();
-    const out = [v, v.split(",")[0].trim(), v.split(/\s+/).slice(0, 2).join(" "), v.split(/\s+/)[0]];
+    const out = [v.split(",")[0].trim(), v, v.split(/\s+/).slice(0, 2).join(" "), v.split(/\s+/)[0]];
     return [...new Set(out.filter((q) => q.length >= 2))];
   };
 
   async function fillCombo(input, value, spec = {}) {
-    await openCombo(input);
+    if (!(await openCombo(input))) return { ok: false, reason: "the dropdown didn't open" };
     let nodes = await settledOptions(input, 900);
-    let res = nodes.length ? JA.pick(value, nodes.map((n) => n.innerText.trim())) : { option: null, candidates: [] };
+    const first = nodes.map((n) => n.innerText.trim());   // the full list, before typing filters it
+    let res = nodes.length ? JA.pick(value, first) : { option: null, candidates: [] };
     const tried = [];
-    if (!res.option) {
+    if (!res.option) {   // search-as-you-type (location, school): type, wait for results
       for (const q of spec.queries ?? JA.queries(value)) {
         tried.push(q);
         setNative(input, q);
-        nodes = await settledOptions(input, 4000);
+        nodes = await settledOptions(input, 3000);
         res = JA.pick(value, nodes.map((n) => n.innerText.trim()));
         if (res.option) break;
       }
     }
     if (!res.option) {
-      const candidates = res.candidates?.length ? res.candidates : nodes.map((n) => n.innerText.trim()).slice(0, 8);
-      setNative(input, "");
+      const candidates = (res.candidates?.length ? res.candidates : nodes.length ? nodes.map((n) => n.innerText.trim()) : first).slice(0, 8);
       closeCombo(input);
       return { ok: false, reason: "no clear option", candidates, tried };
     }
-    const node = nodes.find((n) => n.innerText.trim() === res.option);
-    mouse(node, "mouseover");
-    mouse(node, "mousedown");
-    mouse(node, "mouseup");
-    mouse(node, "click");
-    await sleep(120);
-    const shownText = (containerOf(input)?.innerText ?? "").trim();
-    if (!JA.norm(shownText).includes(JA.norm(res.option))) {
-      closeCombo(input);
-      return { ok: false, reason: "the page didn't keep the choice", candidates: [res.option] };
-    }
-    input.blur();
-    return { ok: true, shown: res.option };
+    press(nodes.find((n) => n.innerText.trim() === res.option), true);
+    await JA.waitFor(() => chosen(input).some((t) => JA.norm(t) === JA.norm(res.option)), 1000, 50);
+    const ok = chosen(input).some((t) => JA.norm(t) === JA.norm(res.option));
+    closeCombo(input);
+    return ok ? { ok: true, shown: res.option } : { ok: false, reason: "the page didn't keep the choice", candidates: [res.option] };
   }
 
   JA.fillOne = async (found, value, spec = {}) => {
