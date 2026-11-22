@@ -16,8 +16,14 @@ const SECTIONS = [
   { key: "auto", title: "Filled automatically", hint: "Acknowledgements and similar answers." },
 ];
 
-export default function ReviewCard({ toolCallId, artifact }) {
-  if (!artifact) return <p className="animate-pulse text-sm text-muted motion-reduce:animate-none">Saving answers…</p>;
+export default function ReviewCard({ toolCallId, artifact, result }) {
+  if (!artifact) {
+    // Still running: show progress. Finished without a card (an error, e.g. an expired
+    // application): show nothing; the agent explains it in its reply.
+    return result === undefined
+      ? <p className="animate-pulse text-sm text-muted motion-reduce:animate-none">Saving answers…</p>
+      : null;
+  }
   // Keyed by draft so the editable answers start from this draft's values.
   return <ReviewBody key={artifact.draft_id} toolCallId={toolCallId} artifact={artifact} />;
 }
