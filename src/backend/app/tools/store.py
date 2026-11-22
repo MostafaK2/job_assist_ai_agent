@@ -16,9 +16,8 @@ from pathlib import Path
 from app.config import PROFILE_PATH
 
 DB_PATH = Path(PROFILE_PATH).resolve().parent / "applications.db"   # next to profile.json
-EXPIRES_SECONDS = 2 * 60 * 60
-TTL_SECONDS = {"queues": 24 * 60 * 60}   # a queue of approved jobs can take a day to work through
-
+EXPIRES_SECONDS = 24 * 60 * 60          # applications, drafts, fills: a day to review, fill and submit
+TTL_SECONDS = {"queues": 3 * 24 * 60 * 60}   # a queue of approved jobs can take a few days
 
 def _ttl(kind: str) -> int:
     return TTL_SECONDS.get(kind, EXPIRES_SECONDS)

@@ -1,5 +1,6 @@
 """POST /api/assistant: streams the agent's reply to the chat UI."""
 import logging
+import inspect
 import uuid
 
 from assistant_stream import RunController, create_run
@@ -9,14 +10,14 @@ from fastapi import APIRouter, HTTPException, Request
 from langchain_core.exceptions import ModelError, ModelRateLimitError
 from langchain_core.messages import AIMessage, HumanMessage
 
+from app.api.fill_events import fill_event_message
 from app.api.job_decisions import decision_message
 from app.api.review_decision import review_message
-from app.api.schemas import (MAX_MESSAGE_CHARS, AddMessageCommand, ChatRequest, JobDecisionsCommand,
-                             ReviewDecisionCommand)
+from app.api.schemas import (MAX_MESSAGE_CHARS, AddMessageCommand, ChatRequest, FillEventCommand,
+                             JobDecisionsCommand, ReviewDecisionCommand)
 from app.db.chat_store import conversation_exists, parse_thread_id, save_messages, touch_conversation
 
 import json
-import logging
 import os
 
 log = logging.getLogger("agent.tools")
@@ -99,6 +100,8 @@ async def assistant(request: ChatRequest, http_request: Request):
             decisions.append(await decision_message(conversation_id, c))
         elif isinstance(c, ReviewDecisionCommand):
             decisions.append(await review_message(conversation_id, c))
+        elif isinstance(c, FillEventCommand):
+            decisions.append(await fill_event_message(conversation_id, c))
     new_messages = _user_messages(request) + [d.message for d in decisions]
 
     if not new_messages:
@@ -108,7 +111,9 @@ async def assistant(request: ChatRequest, http_request: Request):
     if await save_messages(conversation_id, new_messages) == 0:
         raise HTTPException(status_code=409, detail="This message was already sent")
     for decision in decisions:
-        decision.after_save() 
+        # Queue / draft / application changes, only once the decision is saved.
+        if inspect.isawaitable(result := decision.after_save()):
+            await result 
     await touch_conversation(conversation_id, new_messages[0].content)
 
     async def run(controller: RunController):

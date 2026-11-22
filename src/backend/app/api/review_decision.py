@@ -5,7 +5,8 @@ saved tool message, never the browser), the user's edits are checked like the mo
 and the draft's status is set here, in code. The user's own answers (phone, self-ID...) are saved
 to the draft only: they never appear in the message the model gets.
 
-    approve   edits applied, nothing required left -> draft "approved" -> next job in the queue
+    approve   edits applied, nothing required left -> draft "approved" -> the agent fills the form
+              (fill_application); the queue moves on when the user submits or skips (fill_events.py)
     skip      draft "skipped" -> next job in the queue
     changes   the note goes to the model, which saves a new draft (a new card)
 """
@@ -15,7 +16,7 @@ import uuid
 from fastapi import HTTPException
 from langchain_core.messages import HumanMessage
 
-from app.api.decision import Decision
+from app.api.decision import Decision, next_job_text
 from app.api.schemas import ReviewDecisionCommand
 from app.db.chat_store import find_tool_message
 from app.tools import job_queue, store
@@ -28,16 +29,6 @@ def _flat(text: str, limit: int) -> str:
     return re.sub(r"\s+", " ", text or "").strip()[:limit]
 
 
-def _next_step(thread_id: str, outcome: str, label: str) -> str:
-    """What to do after this job, from the queue (written by code, so the order can't drift)."""
-    if (nxt := job_queue.peek_next(thread_id)) is not None:
-        return f" Next, prepare this one: {nxt['label']}."
-    done = job_queue.summary(thread_id)
-    done[outcome].append(label)
-    parts = [f"{k.capitalize()}: {'; '.join(v)}." for k, v in done.items() if v]
-    return " That was the last approved job. " + " ".join(parts) + " Summarize this in one or two lines."
-
-
 async def review_message(conversation_id: uuid.UUID, command: ReviewDecisionCommand) -> Decision:
     saved = await find_tool_message(conversation_id, command.tool_call_id, "save_models_answers")
     draft_id = ((saved or {}).get("artifact") or {}).get("draft_id")
@@ -47,7 +38,7 @@ async def review_message(conversation_id: uuid.UUID, command: ReviewDecisionComm
     app = store.get("applications", draft["application_id"]) or {}
     if app.get("latest_draft") != draft_id:
         raise HTTPException(409, "There's a newer version of this application below")
-    if draft["status"] in ("approved", "skipped"):
+    if draft["status"] in ("approved", "submitted", "skipped"):
         raise HTTPException(409, "You already decided on this application")
 
     thread_id = str(conversation_id)
@@ -77,7 +68,7 @@ async def review_message(conversation_id: uuid.UUID, command: ReviewDecisionComm
         if missing:
             raise HTTPException(400, {"missing_required": list(dict.fromkeys(missing))})
         updates = {"answers": answers, "sources": sources, "status": "approved"}
-        text = f"I approved the application for {label}."
+        text = f"I approved the application for {label}. Fill it now: call fill_application with draft_id {draft_id}."
     elif command.decision == "skip":
         updates = {"status": "skipped"}
         text = f"Skip the application for {label}."
@@ -88,14 +79,14 @@ async def review_message(conversation_id: uuid.UUID, command: ReviewDecisionComm
         text = (f"Change the application for {label} (application_id {draft['application_id']}): {note}\n"
                 "Then call save_models_answers again.")
 
-    if in_queue and command.decision != "changes":
-        text += _next_step(thread_id, updates["status"], label)
+    if in_queue and command.decision == "skip":   # approved jobs move on after submit (fill_events.py)
+        text += next_job_text(thread_id, "skipped", label)
 
     def after_save():
         if updates:
             store.put("drafts", draft_id, {**draft, **updates})
-        if in_queue and command.decision != "changes":
-            job_queue.finish(thread_id, updates["status"])
+        if in_queue and command.decision == "skip":
+            job_queue.finish(thread_id, "skipped")
 
     return Decision(
         message=HumanMessage(

@@ -1,4 +1,4 @@
-"""The approved jobs for one chat, worked through one at a time (Gate 1 -> review -> next).
+"""The approved jobs for one chat, worked through one at a time (Gate 1 -> review -> fill -> next).
 
 Kept on the server (store.py), keyed by the chat's thread id, so the model can't skip, reorder
 or repeat jobs: every "next job" message is written by code from this queue.
@@ -6,8 +6,8 @@ or repeat jobs: every "next job" message is written by code from this queue.
     start(thread_id, jobs)        jobs = [{"id": "board_token/job_id", "label": "..."}], in order
     current(thread_id)            the job being worked on now, or None
     peek_next(thread_id)          the job after it, or None (doesn't change anything)
-    finish(thread_id, outcome)    record "approved" / "skipped" for the current job, move on
-    summary(thread_id)            {"approved": [...labels], "skipped": [...labels]}
+    finish(thread_id, outcome)    record "submitted" / "skipped" for the current job, move on
+    summary(thread_id)            {"submitted": [...labels], "skipped": [...labels]}
 """
 from app.tools import store
 
@@ -44,4 +44,4 @@ def finish(thread_id: str, outcome: str) -> None:
 def summary(thread_id: str) -> dict[str, list[str]]:
     q = _get(thread_id) or {"jobs": [], "results": {}}
     return {outcome: [j["label"] for j in q["jobs"] if q["results"].get(j["id"]) == outcome]
-            for outcome in ("approved", "skipped")}
+            for outcome in ("submitted", "skipped")}
