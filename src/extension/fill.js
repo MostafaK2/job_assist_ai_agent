@@ -209,17 +209,20 @@
   };
 
   async function fillCombo(input, value, spec = {}) {
+    // Locations come with {city, state, country} (spec.place) and are matched part by part.
+    const pick = (texts) => (spec.place ? JA.pickPlace(spec.place, texts) : JA.pick(value, texts));
+    const queries = spec.queries ?? (spec.place ? JA.placeQueries(spec.place) : JA.queries(value));
     if (!(await openCombo(input))) return { ok: false, reason: "the dropdown didn't open" };
     let nodes = await settledOptions(input, 900);
     const first = nodes.map((n) => n.innerText.trim());   // the full list, before typing filters it
-    let res = nodes.length ? JA.pick(value, first) : { option: null, candidates: [] };
+    let res = nodes.length ? pick(first) : { option: null, candidates: [] };
     const tried = [];
     if (!res.option) {   // search-as-you-type (location, school): type, wait for results
-      for (const q of spec.queries ?? JA.queries(value)) {
+      for (const q of queries) {
         tried.push(q);
         setNative(input, q);
         nodes = await settledOptions(input, 3000);
-        res = JA.pick(value, nodes.map((n) => n.innerText.trim()));
+        res = pick(nodes.map((n) => n.innerText.trim()));
         if (res.option) break;
       }
     }

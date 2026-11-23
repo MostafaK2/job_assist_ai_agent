@@ -108,6 +108,52 @@
     return { option: null, candidates: scored.filter((o) => o.score > 0).slice(0, 8).map((o) => o.text) };
   };
 
+  // ---------------------------------------------------------------- places (location pickers)
+  // Options look like "Philadelphia, Pennsylvania, United States". Compare city, state and country
+  // separately, so "New Philadelphia, Pennsylvania" or "Philadelphia, Mississippi" never win.
+  const PREFIX = /^(city|town|township|borough|village|municipality) of /;
+  const PROVINCES = {
+    on: "ontario", bc: "british columbia", ab: "alberta", qc: "quebec", mb: "manitoba", sk: "saskatchewan",
+    ns: "nova scotia", nb: "new brunswick", nl: "newfoundland and labrador", pe: "prince edward island",
+  };
+  const stateKey = (s) => { const n = norm(s); return STATES[n] ?? PROVINCES[n] ?? n; };   // "PA" -> "pennsylvania"
+  const same = (a, b) => a === b || SYNONYMS.some((g) => g.includes(a) && g.includes(b));  // "usa" = "united states"
+  const title = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+
+  /** place = {city, state?, country?} -> {option, how: "place"} | {option: null, candidates} */
+  JA.pickPlace = (place, options) => {
+    const city = norm(place?.city);
+    if (!city) return { option: null, candidates: [] };
+    const state = place.state ? stateKey(place.state) : null;
+    const country = place.country ? norm(place.country) : null;
+    const fits = (part) => (state && stateKey(part) === state) || (country && same(part, country));
+
+    const ranked = [];
+    for (const text of options) {
+      const [first = "", ...rest] = String(text).split(",").map(norm).filter(Boolean);
+      if (first.replace(PREFIX, "") !== city) continue;                      // the city must be exact
+      const hasState = !!state && rest.some((p) => stateKey(p) === state);
+      if (rest.length >= 2) {
+        if (state && !hasState) continue;                                     // another state
+        if (country && !same(rest.at(-1), country)) continue;                 // another country
+      } else if (rest.length === 1 && (state || country) && !fits(rest[0])) continue;
+      ranked.push({ text: String(text), rank: (hasState ? 2 : 0) + (PREFIX.test(first) ? 0 : 1) });
+    }
+    ranked.sort((a, b) => b.rank - a.rank);
+    const [best, second] = ranked;
+    if (best && (!second || best.rank > second.rank)) return { option: best.text, how: "place" };
+    const candidates = (ranked.length ? ranked.map((r) => r.text)
+      : options.filter((o) => norm(o).includes(city))).slice(0, 8);
+    return { option: null, candidates };
+  };
+
+  /** What to type into a location search: "Philadelphia, PA" finds nothing, these do. */
+  JA.placeQueries = (place) => {
+    const city = String(place?.city ?? "").trim();
+    const state = place?.state ? title(stateKey(place.state)) : "";
+    return [...new Set([state && `${city}, ${state}`, city].filter(Boolean))];
+  };
+
   JA.norm = norm;
   JA.DECLINE = DECLINE;
 })();

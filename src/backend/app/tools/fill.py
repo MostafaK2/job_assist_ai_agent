@@ -81,11 +81,11 @@ def profile_facts(profile: dict) -> dict:
                        for j in jobs],
     }
 
-
 def build_plan(fill_id: str, draft: dict, profile: dict) -> dict:
     """Everything the extension needs to fill the form: the approved answers (by Greenhouse field
     name), the resume, and profile facts for page-only fields."""
     fields, unanswered, resume = [], [], None
+    facts = profile_facts(profile)
     for f in draft["fields"]:
         if f.get("type") == "input_hidden":
             continue
@@ -105,6 +105,8 @@ def build_plan(fill_id: str, draft: dict, profile: dict) -> dict:
             "options": f.get("options") or [], "value": value,
             "source": "model" if source == "model" else "user" if source == "user" else "profile",
             "private": _is_private(f, source),   # never sent to the agent
+            # the location picker matches city, state and country separately
+            **({"place": facts["location"]} if source == "profile.address.city/state" else {}),
         })
     return {
         "fill_id": fill_id,
@@ -113,7 +115,7 @@ def build_plan(fill_id: str, draft: dict, profile: dict) -> dict:
         "fields": fields,
         "resume": resume,
         "unanswered": list({u["label"]: u for u in unanswered}.values()),
-        "profile_facts": profile_facts(profile),
+        "profile_facts": facts,
     }
 
 
