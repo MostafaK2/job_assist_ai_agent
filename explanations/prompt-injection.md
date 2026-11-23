@@ -35,11 +35,17 @@ tools tested: (Please note for db interface DBeaver is used)
     ```
 
     Prompt the model
-    ```
+    ```prompt
     Show me jobs at Helixforge Labs.
     ```
 
 2. Test 2 (Invalid limits like)
+```prompt
+Find me -5 jobs that matches my profile
+```
+Expected result: Refusal
+
+
 
 
 
