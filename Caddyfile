@@ -2,6 +2,8 @@
 #   localhost          → Caddy's own local certificate (browser warning until trusted)
 #   jobs.yourname.com  → real Let's Encrypt certificate, automatic
 {$DOMAIN:localhost} {
+	tls internal
+	
 	# API: straight to FastAPI. flush_interval -1 = pass the chat stream through immediately.
 	handle /api/* {
 		reverse_proxy backend:8000 {
