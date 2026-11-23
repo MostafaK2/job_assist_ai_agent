@@ -64,12 +64,19 @@ docker compose cp caddy:/data/caddy/pki/authorities/local/root.crt ./caddy-root.
 docker compose up -d db
 
 # 2. Backend 
+``` bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-playwright install chromium 
 cd src/backend
 alembic upgrade head
 uvicorn app.api.main:app --reload --port 8000
+```
+to start the app to debug
+```bash
+DEBUG_TOOLS=1 uvicorn app.api.main:app --reload --port 8000
+```
+
+
 
 # 3. Frontend (new terminal)
 cd src/frontend
@@ -77,6 +84,32 @@ npm install
 npm run dev
 ```
 Open http://localhost:3000/chat to start chatting
+
+
+# 4. (Optional Dev Mainly Database related) Alembic
+
+Database connection: 
+    Username: agent
+    pass: agent
+    database: agent
+    
+Database migration steps (MUST RUN FROM )
+    Initialization (Sets up the database if you got none)
+        alembic upgrade head
+    Revision/Upgrade (once you made changes to a file)
+        alembic revision --autogenerate -m "add companies jobs job_applications"
+
+    Upgrading (If you edited the databse -- this applies the revision)
+        alebic upgrade head
+
+Ingestion Pipeline (replaces entire job section -- for now -- RUN THIS ONCE During initialization)
+    python -m app.ingest.sync_greenhouse
+
+    - Add this later in the docker entry point bash sciript to preload the jobs with random jobs from 10 different companies
+
+
+In a real world settings that ingestion pipeline would be more sophisticated (this approach was chosen to )
+
 
 # Using it
 - (SKIP STEP) Go to /onboarding and upload your resume (PDF). Answer the profile questions. (Onboarding is completed yet )

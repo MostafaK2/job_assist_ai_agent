@@ -6,7 +6,8 @@
                                                    ones, checks everything, saves a draft and shows
                                                    it to the user as a review card (the artifact)
     Gate 2: the user approves, asks for changes or skips on that card (app/api/review_decision.py).
-    Filling the real form comes after approval (not built yet); nothing is ever submitted.
+    Then fill_application (tools/fill.py) fills the real form in the user's Chrome; the user
+    submits it themselves. Nothing is ever submitted by this code.
 
 Everything that matters lives on the server (store.py: SQLite in data/applications.db); the
 model only carries ids. Private details (email, phone, address, self-ID answers) are filled by

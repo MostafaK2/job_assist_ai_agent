@@ -43,7 +43,17 @@ class ReviewDecisionCommand(BaseModel):
     note: str = Field("", max_length=2000)  # what to change (decision "changes")
 
 
-Command = Annotated[Union[AddMessageCommand, JobDecisionsCommand, ReviewDecisionCommand], Field(discriminator="type")]
+class FillEventCommand(BaseModel):
+    """A button on a fill_application card. The fill itself is looked up on the server."""
+    model_config = ConfigDict(populate_by_name=True)
+
+    type: Literal["fill-event"]
+    tool_call_id: str = Field(alias="toolCallId", min_length=1, max_length=200)
+    event: Literal["submitted", "skipped"]
+
+
+Command = Annotated[Union[AddMessageCommand, JobDecisionsCommand, ReviewDecisionCommand, FillEventCommand],
+                    Field(discriminator="type")]
 
 class ChatRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True, extra="ignore")

@@ -11,6 +11,7 @@ from app.api.assistant import router as assistant_router
 from app.db.checkpointer import open_checkpointer
 from app.db.engine import engine
 from app.api.threads import router as threads_router
+from app.api.fills import router as fills_router
 
 import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
@@ -30,6 +31,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Job Assist API", lifespan=lifespan)
 app.include_router(assistant_router, prefix="/api")
 app.include_router(threads_router, prefix="/api")
+app.include_router(fills_router, prefix="/api")
 
 
 @app.get("/api/health")
