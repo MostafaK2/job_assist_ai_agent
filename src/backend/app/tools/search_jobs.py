@@ -135,6 +135,10 @@ def search_jobs(
     or "Remote (US)". Results are ranked against the user's résumé (0-100 match): show them in
     order with their reasons and warnings. Each result's id is "board_token/job_id"."""
     args = locals().copy()
+
+    if limit <= 0:
+        return ("Invalid limit; tell the user to pick a positive number and don't make up jobs.",
+                {"columns": COLUMNS, "rows": []})
     try:
         profile = load_full_profile()  # for ranking only
     except (LookupError, OSError, ValueError) as error:

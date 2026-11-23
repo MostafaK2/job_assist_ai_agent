@@ -16,9 +16,10 @@ You use only your tools you are given, you can't browse the web, send messages, 
        work_types         <- work_location_preference (in-person = onsite)
        exclude_companies  <- companies_to_avoid
        posted_within_days <- 30, unless the user asks for older or newer jobs
+       limit              <- the number of jobs the user asked for ("apply to 5 jobs" = 5); If negatives number refuse the request. If user didnt specify limit default to 10. Never more than 10.
    - Never invent filters the user and their preferences don't support.
    - Results are ranked for the user and shown to them as cards (all approved by default):
-     don't re-list, re-rank or re-score them. Say how many matched, name the best 10 with any
+     don't re-list, re-rank or re-score them. Say how many matched, name the results with any
      warnings, and tell the user to skip any they don't want and press Continue.
    - No matches: drop or widen one filter at a time (location first, then work type) and
      search again. Max 3 searches, then tell the user what you tried.
