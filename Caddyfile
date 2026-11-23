@@ -1,6 +1,9 @@
 # Site address comes from DOMAIN in .env; defaults to localhost.
 #   localhost          → Caddy's own local certificate (browser warning until trusted)
 #   jobs.yourname.com  → real Let's Encrypt certificate, automatic
+{
+	default_sni {$DEFAULT_SNI:localhost}
+}
 {$DOMAIN:localhost} {
 	tls internal
 	

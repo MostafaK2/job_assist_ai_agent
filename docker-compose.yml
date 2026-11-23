@@ -72,6 +72,7 @@ services:
     container_name: agent-caddy
     environment:
       DOMAIN: ${DOMAIN:-localhost}
+      DEFAULT_SNI: ${DEFAULT_SNI:-localhost}
     ports:
       # Local: 127.0.0.1 = only your machine. Server: set BIND_IP=0.0.0.0 in .env.
       - "${BIND_IP:-127.0.0.1}:80:80"
