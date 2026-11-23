@@ -6,7 +6,11 @@
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3mULgV7BuU4nVS/9a+/yLg7evgixmjzWEmLUkGuaaW8b418K3GgOPIAlIkYtA50Cx8zssPy1mBjpyG+UxzcgXF0ImEaYxCsuMuIVNp9OsaDL8CoGSUT9SYDjXBisfRZ6+FMzXcM6ELWU4QaJuwX6Fv0b6QauxXTBH82vlE314heNaGOxUpkXkeMOK1LySHbSqdXZi/OdiG5EZiMzJ1q+hgkDXKy7pbhFkslfutMvrK+H19odmHp+daeY/NOh8N3NVm2sqlVMBcMMkmsdaK/tDG8TIYSSt05v9M3AU3yBm8uSiza3SNjCnjVrODQ2nIFHJj8FDICSkSZFSjkkz9tEfwIDAQAB",
   "permissions": ["storage"],
   "background": { "service_worker": "background.js" },
-  "externally_connectable": { "matches": ["http://localhost:3000/*", "http://127.0.0.1:3000/*"] },
+  "externally_connectable": { "matches": [
+  "http://localhost:3000/*", "http://127.0.0.1:3000/*",
+  "https://localhost/*", "https://job-assistant.localhost/*",
+  "https://jobassist.range.test/*"
+  ]},
   "content_scripts": [
     {
       "matches": ["https://job-boards.greenhouse.io/*", "https://boards.greenhouse.io/*"],
