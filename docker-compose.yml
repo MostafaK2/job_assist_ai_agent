@@ -21,6 +21,7 @@ services:
     build:
       context: .
       dockerfile: src/backend/Dockerfile
+    image: job-assist-backend
     container_name: agent-backend
     env_file: .env
     environment:
@@ -35,6 +36,25 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  ingest:
+    image: job-assist-backend
+    pull_policy: never
+    container_name: agent-ingest
+    env_file: .env
+    environment:
+      APP_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-agent}:${POSTGRES_PASSWORD:-agent}@db:5432/${POSTGRES_DB:-agent}
+    volumes:
+      - ./src/backend/data:/code/src/backend/data   # greenhouse_companies.json
+    entrypoint: ["python", "-m", "app.ingest.sync_greenhouse"]   # skip migrations + uvicorn
+    healthcheck:
+      disable: true       # image healthcheck pings :8000, which ingest doesn't serve
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    restart: "no"
+  
   frontend:
     build:
       context: ./src/frontend
